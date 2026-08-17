@@ -1,8 +1,11 @@
+'use client'
+
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { products } from '@/lib/supabase'
-import { Check, ShoppingCart, ChevronRight, Shield, Clock, Users, Package, FlaskConical, HelpCircle, Truck, Lock } from 'lucide-react'
-import AddToCartButton from '@/components/AddToCartButton'
+import { Check, ChevronRight, Shield, Clock, Users, Package, FlaskConical, HelpCircle, Truck, Lock } from 'lucide-react'
+import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }))
@@ -80,7 +83,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex-1 min-w-[200px]">
-                  <AddToCartButton product={product} />
+                  <ProductPurchaseBox product={product} />
                 </div>
                 <Link
                   href="#how-it-works"
@@ -172,7 +175,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   </div>
                 </div>
                 <p className="text-3xl font-bold font-heading text-clinical-charcoal mb-4">${product.price.toFixed(2)}</p>
-                <AddToCartButton product={product} />
+                <ProductPurchaseBox product={product} />
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-8 w-12 rounded bg-clinical-white border border-clinical-gray-dark flex items-center justify-center">
                     <span className="text-xs font-bold text-clinical-charcoal">VISA</span>
