@@ -128,26 +128,12 @@ export default function HomePage() {
             <div className="lg:col-span-6 xl:col-span-7 relative">
               <div className="relative aspect-square max-w-lg mx-auto lg:ml-auto">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-clinical-blue via-clinical-white to-clinical-gray" />
-                <div className="absolute inset-4 rounded-2xl border border-clinical-gray-dark/50 bg-clinical-white/80 backdrop-blur-sm flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="relative mx-auto mb-6 h-32 w-32">
-                      <svg viewBox="0 0 120 120" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="60" cy="60" r="55" stroke="#E8E8EC" strokeWidth="2" />
-                        <circle cx="60" cy="60" r="45" stroke="#EEF2FA" strokeWidth="1" />
-                        <path d="M60 15c-12 22-35 40-35 58 0 12 10 22 22 22 6 0 12-2 16-6 4 4 10 6 16 6 12 0 22-10 22-22 0-18-23-36-35-58z" fill="#8B1E2D" opacity="0.9" />
-                        <path d="M60 30c-3 6-9 12-9 18a9 9 0 0 0 18 0c0-6-6-12-9-18z" fill="#FFFFFF" opacity="0.3" />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="h-3 w-3 rounded-full bg-clinical-crimson animate-pulse" />
-                      </div>
-                    </div>
-                    <p className="text-sm font-semibold text-clinical-charcoal mb-1">Blood Type Test Pack</p>
-                    <p className="text-xs text-clinical-muted">Precision Diagnostic Testing</p>
-                    <div className="mt-4 flex items-center justify-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-                      <span className="text-xs text-green-600 font-medium">Ready to use</span>
-                    </div>
-                  </div>
+                <div className="absolute inset-4 rounded-2xl border border-clinical-gray-dark/50 bg-clinical-white overflow-hidden">
+                  <img
+                    src="https://img.magnific.com/free-photo/medical-banner-with-doctor-wearing-goggles_23-2149611193.jpg?semt=ais_test_b&w=740&q=80"
+                    alt="Medical laboratory professional"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div className="absolute -bottom-4 -right-4 lg:-right-8 h-24 w-24 rounded-xl border border-clinical-gray-dark bg-clinical-white shadow-lg flex items-center justify-center">
                   <div className="text-center">
