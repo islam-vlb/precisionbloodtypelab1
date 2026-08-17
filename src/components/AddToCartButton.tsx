@@ -18,10 +18,10 @@ export default function AddToCartButton({ product }: { product: Product }) {
   return (
     <button
       onClick={handleClick}
-      className={`w-full rounded-lg px-6 py-4 font-heading font-semibold flex items-center justify-center gap-2 transition-colors ${
+      className={`w-full rounded-lg px-6 py-4 font-heading font-semibold flex items-center justify-center gap-2 transition-all duration-200 ${
         added
           ? 'bg-green-600 text-white'
-          : 'bg-crimson text-white hover:bg-crimson-light'
+          : 'bg-clinical-charcoal text-clinical-white hover:bg-clinical-charcoal-light'
       }`}
     >
       <ShoppingCart className="h-5 w-5" />

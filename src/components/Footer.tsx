@@ -3,80 +3,139 @@ import { BUSINESS } from '@/lib/config'
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-ivory">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <svg viewBox="0 0 40 40" className="h-8 w-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 4L8 12v12c0 8 12 14 12 14s12-6 12-14V12L20 4z" fill="#1E2530" stroke="#8B1E2D" strokeWidth="2"/>
-                <path d="M20 12c-2 4-6 8-6 12a6 6 0 0 0 12 0c0-4-4-8-6-12z" fill="#8B1E2D"/>
-              </svg>
-              <span className="font-heading text-lg font-bold">PrecisionBloodTypeLab</span>
-            </Link>
-            <p className="text-sm text-ivory/70">{BUSINESS.name}</p>
-            <p className="text-sm text-ivory/70">{BUSINESS.address}</p>
-            <p className="text-sm text-ivory/70 mt-2">{BUSINESS.email}</p>
-            <p className="text-sm text-ivory/70">{BUSINESS.phone}</p>
-          </div>
+    <footer className="bg-clinical-charcoal text-clinical-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="py-16 lg:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+            <div className="lg:col-span-4">
+              <Link href="/" className="flex items-center gap-3 mb-6 group">
+                <svg viewBox="0 0 40 40" className="h-9 w-9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 3L7 11.5V24.5C7 34.5 20 40 20 40s13-5.5 13-15.5V11.5L20 3z"
+                    fill="#FFFFFF"
+                    stroke="#8B1E2D"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M20 10.5c-2 4-7 9-7 14.5a7.5 7.5 0 0 0 15 0c0-5.5-5-10.5-7-14.5z"
+                    fill="#8B1E2D"
+                  />
+                </svg>
+                <span className="font-heading text-lg font-bold tracking-tight">PrecisionBloodTypeLab</span>
+              </Link>
+              <p className="text-sm text-clinical-white/60 leading-relaxed max-w-sm">
+                Simple, private at-home blood type testing. Know your ABO and Rh blood type from the comfort of home.
+              </p>
+              <div className="mt-6 space-y-2 text-sm text-clinical-white/50">
+                <p>{BUSINESS.name}</p>
+                <p>{BUSINESS.address}</p>
+                <p className="pt-2">{BUSINESS.email}</p>
+              </div>
+            </div>
 
-          <div>
-            <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Shop</h3>
-            <ul className="space-y-2">
-              <li><Link href="/" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Blood Type Test Pack</Link></li>
-              <li><Link href="/product/blood-health-support-formula" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Blood Health Support Formula</Link></li>
-              <li><Link href="/ingredients" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Ingredients</Link></li>
-            </ul>
-          </div>
+            <div className="lg:col-span-2 lg:col-start-6">
+              <h3 className="font-heading font-semibold text-xs uppercase tracking-widest text-clinical-white/40 mb-6">
+                Shop
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Blood Type Test Pack
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/product/blood-health-support-formula" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Blood Health Support Formula
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/ingredients" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Ingredients
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><Link href="/about" className="text-sm text-ivory/70 hover:text-crimson transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Contact</Link></li>
-              <li><Link href="/fulfillment-address" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Fulfillment Address</Link></li>
-            </ul>
-          </div>
+            <div className="lg:col-span-2">
+              <h3 className="font-heading font-semibold text-xs uppercase tracking-widest text-clinical-white/40 mb-6">
+                Company
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/about" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fulfillment-address" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Fulfillment Address
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Policies</h3>
-            <ul className="space-y-2">
-              <li><Link href="/terms" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Terms & Conditions</Link></li>
-              <li><Link href="/privacy" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/refund" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Refund Policy</Link></li>
-              <li><Link href="/shipping" className="text-sm text-ivory/70 hover:text-crimson transition-colors">Shipping Policy</Link></li>
-            </ul>
+            <div className="lg:col-span-2">
+              <h3 className="font-heading font-semibold text-xs uppercase tracking-widest text-clinical-white/40 mb-6">
+                Support
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/terms" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/refund" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Refund Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shipping" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
+                    Shipping Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-ivory/10 pt-8">
-          <p className="text-sm text-ivory/70 mb-2">
-            ⚠️ Individuals under 18 are not permitted to purchase
-          </p>
-          <p className="text-sm text-ivory/70 mb-4">
-            Charges will appear as PrecisionBloodTypeLab on your statement
-          </p>
-          <p className="text-sm text-ivory/70 mb-4">
-            Personal information will not be shared with Third Parties
-          </p>
-          <p className="text-xs text-ivory/50 mb-4">
-            These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
-          </p>
-          <div className="flex items-center gap-3 mb-6">
-            <svg viewBox="0 0 50 32" className="h-8 w-auto rounded" aria-label="Visa" xmlns="http://www.w3.org/2000/svg">
-              <rect width="50" height="32" rx="5" fill="#1A1F71"/>
-              <text x="25" y="21" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold" fontFamily="Arial, sans-serif" letterSpacing="1">VISA</text>
-            </svg>
-            <svg viewBox="0 0 50 32" className="h-8 w-auto rounded" aria-label="Mastercard" xmlns="http://www.w3.org/2000/svg">
-              <rect width="50" height="32" rx="5" fill="#1C1C1C"/>
-              <circle cx="19" cy="16" r="11" fill="#EB001B"/>
-              <circle cx="31" cy="16" r="11" fill="#F79E1B"/>
-              <path d="M25 7.5a11 11 0 0 1 0 17A11 11 0 0 1 25 7.5z" fill="#FF5F00"/>
-            </svg>
+        <div className="border-t border-clinical-white/10 py-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-xs text-clinical-white/50">
+              <p>⚠️ Individuals under 18 are not permitted to purchase</p>
+              <span className="hidden sm:inline text-clinical-white/20">|</span>
+              <p>Charges will appear as PrecisionBloodTypeLab on your statement</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-12 rounded bg-clinical-white/10 flex items-center justify-center">
+                <span className="text-xs font-bold text-clinical-white/60">VISA</span>
+              </div>
+              <div className="h-8 w-12 rounded bg-clinical-white/10 flex items-center justify-center">
+                <div className="flex">
+                  <div className="h-5 w-5 rounded-full bg-[#EB001B]/80" />
+                  <div className="h-5 w-5 rounded-full bg-[#F79E1B]/80 -ml-2" />
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-xs text-ivory/50">
-            © 2026 TrevCore LLC — PrecisionBloodTypeLab. All rights reserved.
-          </p>
+          <div className="mt-6 pt-6 border-t border-clinical-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-clinical-white/40">
+              © 2026 TrevCore LLC — PrecisionBloodTypeLab. All rights reserved.
+            </p>
+            <p className="text-xs text-clinical-white/30 max-w-xl text-center sm:text-right">
+              These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

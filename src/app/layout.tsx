@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CartProvider from '@/components/CartProvider'
+import SearchOverlay from '@/components/SearchOverlay'
 
 export const metadata: Metadata = {
   title: 'PrecisionBloodTypeLab — Blood Type Test Pack',
@@ -13,9 +14,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-ivory text-charcoal antialiased">
+      <body className="bg-clinical-white text-clinical-charcoal antialiased">
         <CartProvider>
           <Header />
+          <SearchOverlay />
           <main>{children}</main>
           <Footer />
         </CartProvider>

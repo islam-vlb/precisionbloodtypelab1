@@ -4,14 +4,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        crimson: { DEFAULT: '#8B1E2D', light: '#A6283A', dark: '#6E1622' },
-        ivory: { DEFAULT: '#FAF6F1', dark: '#F0EBE3' },
-        charcoal: '#1E2530',
-        gold: { DEFAULT: '#C9A15A', light: '#D4B76E', dark: '#B08D48' },
+        clinical: {
+          white: '#FFFFFF',
+          gray: '#F5F5F7',
+          'gray-dark': '#E8E8EC',
+          charcoal: '#0A0A0F',
+          'charcoal-light': '#1A1A24',
+          crimson: '#8B1E2D',
+          'crimson-light': '#A6283A',
+          'crimson-dark': '#6E1622',
+          blue: '#EEF2FA',
+          'blue-dark': '#DDE4F0',
+          muted: '#6B6B7B',
+        },
       },
       fontFamily: {
-        heading: ['Libre Franklin', 'sans-serif'],
-        body: ['Karla', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Libre Franklin', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
