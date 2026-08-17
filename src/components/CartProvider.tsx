@@ -10,7 +10,7 @@ export interface CartItem {
 
 interface CartContextValue {
   items: CartItem[]
-  addToCart: (product: Product) => void
+  addToCart: (product: Product, quantity?: number) => void
   removeFromCart: (productId: string) => void
   updateQuantity: (productId: string, quantity: number) => void
   clearCart: () => void
