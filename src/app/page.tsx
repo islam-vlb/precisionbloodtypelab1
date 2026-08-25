@@ -237,14 +237,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="relative aspect-square max-w-md mx-auto lg:mx-0 w-full">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-clinical-blue to-clinical-gray" />
-                <div className="absolute inset-6 rounded-2xl border border-clinical-gray-dark bg-clinical-white flex items-center justify-center">
-                  <div className="text-center">
-                    <svg viewBox="0 0 120 120" className="h-28 w-28 mx-auto mb-4 text-clinical-crimson" fill="currentColor">
-                      <path d="M60 10c-15 25-40 45-40 65 0 15 12 27 27 27 8 0 15-3 20-8 5 5 12 8 20 8 15 0 27-12 27-27 0-20-25-40-40-65z"/>
-                    </svg>
-                    <p className="text-sm font-semibold text-clinical-charcoal">Blood Type Test Pack</p>
-                    <p className="text-xs text-clinical-muted mt-1">Product Image</p>
-                  </div>
+                <div className="absolute inset-6 rounded-2xl border border-clinical-gray-dark bg-clinical-white flex items-center justify-center overflow-hidden p-6">
+                  <img
+                    src={mainProduct.image}
+                    alt={mainProduct.name}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               </div>
               <div>
@@ -369,14 +367,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="order-2 lg:order-1 relative aspect-square max-w-md mx-auto lg:mx-0 w-full">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-clinical-blue to-clinical-gray" />
-                <div className="absolute inset-6 rounded-2xl border border-clinical-gray-dark bg-clinical-white flex items-center justify-center">
-                  <div className="text-center">
-                    <svg viewBox="0 0 120 120" className="h-24 w-24 mx-auto mb-3 text-clinical-crimson" fill="currentColor">
-                      <path d="M60 10c-15 25-40 45-40 65 0 15 12 27 27 27 8 0 15-3 20-8 5 5 12 8 20 8 15 0 27-12 27-27 0-20-25-40-40-65z"/>
-                    </svg>
-                    <p className="text-sm font-semibold text-clinical-charcoal">Blood Health Support Formula</p>
-                    <p className="text-xs text-clinical-muted mt-1">Daily Supplement</p>
-                  </div>
+                <div className="absolute inset-6 rounded-2xl border border-clinical-gray-dark bg-clinical-white flex items-center justify-center overflow-hidden p-6">
+                  <img
+                    src={supplementProduct.image}
+                    alt={supplementProduct.name}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               </div>
               <div className="order-1 lg:order-2">

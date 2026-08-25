@@ -55,16 +55,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {!isSupplement ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div className="relative aspect-square rounded-3xl bg-clinical-gray overflow-hidden border border-clinical-gray-dark">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 mx-auto mb-4 text-clinical-crimson" fill="currentColor">
-                    <path d="M60 10c-15 25-40 45-40 65 0 15 12 27 27 27 8 0 15-3 20-8 5 5 12 8 20 8 15 0 27-12 27-27 0-20-25-40-40-65z"/>
-                  </svg>
-                  <p className="text-sm font-semibold text-clinical-charcoal">Blood Type Test Pack</p>
-                  <p className="text-xs text-clinical-muted mt-1">Product Image</p>
-                </div>
-              </div>
+            <div className="relative aspect-square rounded-3xl bg-clinical-gray overflow-hidden border border-clinical-gray-dark flex items-center justify-center p-8">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-full w-full object-contain"
+              />
             </div>
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-clinical-crimson/20 bg-clinical-crimson/5 px-3 py-1 mb-4">
@@ -133,26 +129,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </ul>
               </div>
 
-              {product.ingredients && (
+              {isSupplement && (
                 <div>
                   <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-4">Ingredients</h2>
-                  <div className="overflow-x-auto rounded-xl border border-clinical-gray-dark">
-                    <table className="w-full border-collapse">
-                      <thead>
-                        <tr className="bg-clinical-gray">
-                          <th className="border-b border-clinical-gray-dark px-4 py-3 text-left text-xs font-semibold text-clinical-charcoal uppercase tracking-wider">Ingredient</th>
-                          <th className="border-b border-clinical-gray-dark px-4 py-3 text-left text-xs font-semibold text-clinical-charcoal uppercase tracking-wider">Amount per Serving</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {product.ingredients.map((ing) => (
-                          <tr key={ing.name} className="border-b border-clinical-gray-dark last:border-b-0">
-                            <td className="px-4 py-3 text-sm text-clinical-charcoal">{ing.name}</td>
-                            <td className="px-4 py-3 text-sm text-clinical-muted">{ing.amount}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                  <div className="rounded-xl border border-clinical-gray-dark bg-clinical-gray p-6">
+                    <p className="text-sm text-clinical-charcoal leading-relaxed">
+                      For a full list of ingredients and amounts per serving, please refer to the Supplement Facts panel on the product packaging.
+                    </p>
                   </div>
                 </div>
               )}
@@ -164,13 +147,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             <div className="lg:col-span-1">
               <div className="sticky top-24 rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark">
-                <div className="aspect-square rounded-xl bg-clinical-white border border-clinical-gray-dark flex items-center justify-center mb-6">
-                  <div className="text-center">
-                    <svg viewBox="0 0 120 120" className="h-20 w-20 mx-auto mb-3 text-clinical-crimson" fill="currentColor">
-                      <path d="M60 10c-15 25-40 45-40 65 0 15 12 27 27 27 8 0 15-3 20-8 5 5 12 8 20 8 15 0 27-12 27-27 0-20-25-40-40-65z"/>
-                    </svg>
-                    <p className="text-xs text-clinical-muted font-medium">Blood Health Support Formula</p>
-                  </div>
+                <div className="aspect-square rounded-xl bg-clinical-white border border-clinical-gray-dark flex items-center justify-center mb-6 p-6">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <p className="text-3xl font-bold font-heading text-clinical-charcoal mb-4">${product.price.toFixed(2)}</p>
                 <ProductPurchaseBox product={product} />

@@ -20,7 +20,7 @@ export default function AboutPage() {
               Our mission is to make basic blood information accessible and convenient. The Blood Type Test Pack allows individuals to determine their ABO and Rh blood type from the privacy of their home using a simple finger-prick sample.
             </p>
             <p>
-              We also offer the Blood Health Support Formula, a daily supplement formulated with iron, vitamin B12, and folate to support overall blood health as part of a balanced diet.
+              We also offer the Blood Health Support Formula, a standardized daily supplement formulated to help support healthy blood pressure levels already within a normal range and everyday cardiovascular health as part of a balanced lifestyle.
             </p>
             <p>
               TrevCore LLC is committed to clear communication, accurate product information, and responsible customer service. All charges appear as {BUSINESS.descriptor} on your statement.

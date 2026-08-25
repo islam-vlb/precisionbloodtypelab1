@@ -12,25 +12,12 @@ export default function IngredientsPage() {
             <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Ingredients</span>
           </span>
           <h1 className="font-heading text-3xl sm:text-4xl font-bold text-clinical-charcoal tracking-tight mb-6">Ingredients</h1>
-          <p className="text-clinical-muted">Full ingredient list for the Blood Health Support Formula.</p>
+          <p className="text-clinical-muted">Ingredient information for the Blood Health Support Formula.</p>
         </div>
-        <div className="rounded-2xl border border-clinical-gray-dark bg-clinical-white overflow-hidden mb-8">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-clinical-gray">
-                <th className="border-b border-clinical-gray-dark px-4 py-3 text-left text-xs font-semibold text-clinical-charcoal uppercase tracking-wider">Ingredient</th>
-                <th className="border-b border-clinical-gray-dark px-4 py-3 text-left text-xs font-semibold text-clinical-charcoal uppercase tracking-wider">Amount per Serving</th>
-              </tr>
-            </thead>
-            <tbody>
-              {supplement.ingredients?.map((ing) => (
-                <tr key={ing.name} className="border-b border-clinical-gray-dark last:border-b-0">
-                  <td className="px-4 py-3 text-sm text-clinical-charcoal">{ing.name}</td>
-                  <td className="px-4 py-3 text-sm text-clinical-muted">{ing.amount}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="rounded-2xl border border-clinical-gray-dark bg-clinical-gray p-6 mb-8">
+          <p className="text-sm text-clinical-charcoal leading-relaxed">
+            For a full list of ingredients and amounts per serving, please refer to the Supplement Facts panel on the product packaging.
+          </p>
         </div>
         <div className="rounded-xl border-2 border-clinical-crimson/20 bg-clinical-blue/50 p-6">
           <p className="text-sm text-clinical-charcoal leading-relaxed">{supplement.fdaDisclosure}</p>
