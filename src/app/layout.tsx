@@ -7,7 +7,7 @@ import CartProvider from '@/components/CartProvider'
 import SearchOverlay from '@/components/SearchOverlay'
 
 export const metadata: Metadata = {
-  title: 'PrecisionBloodTypeLab — Blood Type Test Pack',
+  title: 'CalaxoHealthyLifePerspective — Blood Type Test Pack',
   description: 'Determine your ABO and Rh blood type from home with the Blood Type Test Pack from TrevCore LLC.',
 }
 

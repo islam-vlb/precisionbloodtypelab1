@@ -21,7 +21,7 @@ export default function Footer() {
                     fill="#8B1E2D"
                   />
                 </svg>
-                <span className="font-heading text-lg font-bold tracking-tight">PrecisionBloodTypeLab</span>
+                <span className="font-heading text-lg font-bold tracking-tight">{BUSINESS.brandName}</span>
               </Link>
               <p className="text-sm text-clinical-white/60 leading-relaxed max-w-sm">
                 Simple, private at-home blood type testing. Know your ABO and Rh blood type from the comfort of home.
@@ -114,7 +114,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-xs text-clinical-white/50">
               <p>⚠️ Individuals under 18 are not permitted to purchase</p>
               <span className="hidden sm:inline text-clinical-white/20">|</span>
-              <p>Charges will appear as PrecisionBloodTypeLab on your statement</p>
+              <p>Charges appear as {BUSINESS.descriptor} on your statement.</p>
             </div>
             <div className="flex items-center gap-3">
               <div className="h-8 w-12 rounded bg-clinical-white/10 flex items-center justify-center">
@@ -130,7 +130,7 @@ export default function Footer() {
           </div>
           <div className="mt-6 pt-6 border-t border-clinical-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-clinical-white/40">
-              © 2026 TrevCore LLC — PrecisionBloodTypeLab. All rights reserved.
+              © 2026 {BUSINESS.name} — {BUSINESS.brandName}. All rights reserved.
             </p>
             <p className="text-xs text-clinical-white/30 max-w-xl text-center sm:text-right">
               These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.

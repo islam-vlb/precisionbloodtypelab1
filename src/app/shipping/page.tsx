@@ -14,6 +14,7 @@ export default function ShippingPage() {
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">1. Shipping Method</h2>
             <p>All orders are shipped via USPS Priority Mail for a flat rate of $7.95 per order.</p>
+            <p>Orders ship from: {BUSINESS.fulfillmentAddress}</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">2. Delivery Area</h2>

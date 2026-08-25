@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown, ShoppingCart, Search, FlaskConical } from 'lucide
 import CartDrawer from '@/components/CartDrawer'
 import { useCart } from '@/components/CartProvider'
 import { products } from '@/lib/supabase'
+import { BUSINESS } from '@/lib/config'
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -58,7 +59,7 @@ export default function Header() {
               </svg>
             </div>
             <span className="font-heading text-base lg:text-lg font-bold text-clinical-charcoal tracking-tight hidden sm:block">
-              PrecisionBloodTypeLab
+              {BUSINESS.brandName}
             </span>
           </Link>
 

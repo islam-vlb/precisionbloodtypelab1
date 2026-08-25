@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { products } from '@/lib/supabase'
 import { Check, ChevronRight, Shield, Clock, Users, Package, FlaskConical, HelpCircle, Truck, Lock } from 'lucide-react'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
+import { BUSINESS } from '@/lib/config'
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }))
@@ -184,7 +185,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-xs text-clinical-muted">Charges will appear as PrecisionBloodTypeLab on your statement</p>
+                <p className="mt-4 text-xs text-clinical-muted">Charges will appear as {BUSINESS.descriptor} on your statement</p>
                 <div className="mt-6 pt-6 border-t border-clinical-gray-dark">
                   <p className="text-sm text-clinical-muted mb-2">Looking for our main product?</p>
                   <Link href="/" className="inline-flex items-center gap-1 text-clinical-crimson font-semibold hover:text-clinical-crimson-light transition-colors text-sm">

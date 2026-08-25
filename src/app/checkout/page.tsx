@@ -145,7 +145,7 @@ export default function CheckoutPage() {
               <div className="mt-4 space-y-2">
                 <p className="text-sm text-clinical-charcoal">I agree to be billed <span className="font-semibold">${total.toFixed(2)}</span>.</p>
                 <p className="text-sm text-clinical-charcoal">Your credit card will be charged <span className="font-semibold">${total.toFixed(2)}</span>.</p>
-                <p className="text-xs text-clinical-muted">Charges will appear as PrecisionBloodTypeLab on your statement</p>
+                <p className="text-sm font-bold text-clinical-muted">Charges will appear as {BUSINESS.descriptor} on your statement.</p>
                 <p className="text-xs text-clinical-crimson">⚠️ Individuals under 18 are not permitted to purchase</p>
                 <p className="text-xs text-clinical-muted">Personal information will not be shared with Third Parties</p>
               </div>

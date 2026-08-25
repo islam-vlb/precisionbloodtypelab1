@@ -15,7 +15,7 @@ export default function TermsPage() {
         <div className="space-y-8 text-clinical-muted leading-relaxed">
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">1. Introduction</h2>
-            <p>These Terms & Conditions govern your use of PrecisionBloodTypeLab.com, operated by {BUSINESS.name}.</p>
+            <p>These Terms & Conditions govern your use of {BUSINESS.domain}, operated by {BUSINESS.name}.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">2. Products</h2>

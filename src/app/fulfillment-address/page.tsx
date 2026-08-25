@@ -13,7 +13,7 @@ export default function FulfillmentAddressPage() {
         <div className="rounded-2xl bg-clinical-gray p-8 border border-clinical-gray-dark">
           <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-4">Mailing / Fulfillment Address</h2>
           <p className="text-clinical-charcoal">{BUSINESS.name}</p>
-          <p className="text-clinical-charcoal">{BUSINESS.address}</p>
+          <p className="text-clinical-charcoal">{BUSINESS.fulfillmentAddress}</p>
           <p className="mt-6 text-sm text-clinical-muted">
             Please use this address for any returns or correspondence.
           </p>

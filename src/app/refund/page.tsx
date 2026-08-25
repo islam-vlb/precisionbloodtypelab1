@@ -42,7 +42,7 @@ export default function RefundPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">8. Contact</h2>
-            <p>For return inquiries, contact us at {BUSINESS.email} or mail to {BUSINESS.address}.</p>
+            <p>For return inquiries, contact us at {BUSINESS.email} or mail to {BUSINESS.fulfillmentAddress}.</p>
           </section>
         </div>
       </div>

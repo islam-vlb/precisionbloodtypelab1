@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Product } from '@/lib/supabase'
 import { ShoppingCart, Plus, Minus } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
+import { BUSINESS } from '@/lib/config'
 
 const SHIPPING = 7.95
 
@@ -73,7 +74,7 @@ export default function ProductPurchaseBox({ product }: { product: Product }) {
         {added ? 'Added to Cart' : 'Add to Cart'}
       </button>
 
-      <p className="text-xs text-clinical-muted">Charges will appear as PrecisionBloodTypeLab on your statement</p>
+      <p className="text-xs text-clinical-muted">Charges will appear as {BUSINESS.descriptor} on your statement</p>
     </div>
   )
 }

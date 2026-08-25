@@ -14,7 +14,7 @@ export default function OrderConfirmationPage() {
             Thank You for Your Order!
           </h1>
           <p className="text-clinical-muted mb-8">Your order has been placed successfully. We&apos;ll send you a confirmation email shortly.</p>
-          <p className="text-sm text-clinical-muted mb-8">Charges will appear as PrecisionBloodTypeLab on your statement.</p>
+          <p className="text-sm text-clinical-muted mb-8">Charges will appear as {BUSINESS.descriptor} on your statement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/" className="inline-flex items-center justify-center gap-2 rounded-lg bg-clinical-charcoal px-8 py-3 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-colors">
               Return to Home

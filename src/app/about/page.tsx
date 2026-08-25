@@ -14,7 +14,7 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-6 text-clinical-muted leading-relaxed">
             <p>
-              TrevCore LLC is the company behind PrecisionBloodTypeLab. We are based in Tulsa, Oklahoma and operate this website to provide informational blood typing products and health supplements to customers across the United States.
+              TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide informational blood typing products and health supplements to customers across the United States.
             </p>
             <p>
               Our mission is to make basic blood information accessible and convenient. The Blood Type Test Pack allows individuals to determine their ABO and Rh blood type from the privacy of their home using a simple finger-prick sample.
@@ -23,7 +23,7 @@ export default function AboutPage() {
               We also offer the Blood Health Support Formula, a daily supplement formulated with iron, vitamin B12, and folate to support overall blood health as part of a balanced diet.
             </p>
             <p>
-              TrevCore LLC is committed to clear communication, accurate product information, and responsible customer service. All charges appear as PrecisionBloodTypeLab on your statement.
+              TrevCore LLC is committed to clear communication, accurate product information, and responsible customer service. All charges appear as {BUSINESS.descriptor} on your statement.
             </p>
           </div>
         </div>
