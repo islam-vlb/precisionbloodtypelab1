@@ -1,7 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { Product, ProductVariant } from '@/lib/supabase'
+import { Product, ProductVariant, products } from '@/lib/supabase'
 
 export interface CartItem {
   product: Product
@@ -30,7 +30,21 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     if (stored) {
       try {
         const parsed = JSON.parse(stored)
-        setItems(parsed)
+        const migrated = parsed.map((item: Record<string, unknown>) => {
+          if (item.product && !item.variant) {
+            const product = item.product as { id: string; slug?: string; defaultVariantId?: string; variants?: Array<{ id: string }> }
+            const fallbackProduct = products.find((p) => p.id === product.id || p.slug === product.slug)
+            if (fallbackProduct) {
+              const defaultVariant = fallbackProduct.variants.find(
+                (v) => v.id === fallbackProduct.defaultVariantId
+              ) ?? fallbackProduct.variants[0]
+              return { ...item, variant: defaultVariant }
+            }
+            return null
+          }
+          return item
+        }).filter(Boolean)
+        setItems(migrated)
       } catch {
         setItems([])
       }
