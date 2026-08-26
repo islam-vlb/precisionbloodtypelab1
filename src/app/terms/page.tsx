@@ -19,18 +19,25 @@ export default function TermsPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">2. Products</h2>
-            <p>We sell the following products:</p>
+            <p>We sell the following products and options:</p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
               {products.map((p) => (
                 <li key={p.id}>
-                  <span className="font-semibold text-clinical-charcoal">{p.name}</span> — ${p.price.toFixed(2)}
+                  <span className="font-semibold text-clinical-charcoal">{p.name}</span>
+                  <ul className="list-disc pl-4 mt-1 space-y-1">
+                    {p.variants.map((v) => (
+                      <li key={v.id} className="text-clinical-muted">
+                        {v.label} — {v.detail} — <span className="font-semibold text-clinical-charcoal">${v.price.toFixed(2)}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ul>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">3. Pricing</h2>
-            <p>All prices are listed in US Dollars and are subject to change without notice. Shipping is $7.95 per order.</p>
+            <p>All prices are listed in US Dollars and are subject to change without notice. Shipping is included at no additional charge with every order.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">4. Order Acceptance</h2>
@@ -42,7 +49,7 @@ export default function TermsPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">6. Shipping</h2>
-            <p>Orders are shipped via USPS Priority Mail for $7.95. Shipping is limited to the United States. Please see our Shipping Policy for full details.</p>
+            <p>Orders are shipped via USPS Priority Mail. Shipping is limited to the United States and is included at no additional charge. Please see our Shipping Policy for full details.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">7. Returns</h2>

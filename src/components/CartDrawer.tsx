@@ -3,15 +3,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { useCart } from '@/components/CartProvider'
-import { products } from '@/lib/supabase'
 import { X, Minus, Plus, ShoppingCart, ArrowRight } from 'lucide-react'
 
 export default function CartDrawer() {
   const { items, removeFromCart, updateQuantity, itemCount, subtotal } = useCart()
   const [isOpen, setIsOpen] = React.useState(false)
 
-  const shipping = 7.95
-  const total = subtotal + (items.length > 0 ? shipping : 0)
+  const total = subtotal
 
   return (
     <>
@@ -64,7 +62,7 @@ export default function CartDrawer() {
                 ) : (
                   <div className="space-y-4">
                     {items.map((item) => (
-                      <div key={item.product.id} className="group rounded-xl border border-clinical-gray-dark p-4 hover:border-clinical-crimson/30 transition-colors">
+                      <div key={`${item.product.id}::${item.variant.id}`} className="group rounded-xl border border-clinical-gray-dark p-4 hover:border-clinical-crimson/30 transition-colors">
                         <div className="flex gap-4">
                           <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg border ${
                             item.product.category === 'test-kit'
@@ -79,10 +77,11 @@ export default function CartDrawer() {
                             <div className="flex items-start justify-between gap-2">
                               <div>
                                 <h3 className="font-semibold text-clinical-charcoal text-sm truncate">{item.product.name}</h3>
-                                <p className="text-xs text-clinical-muted mt-0.5">${item.product.price.toFixed(2)} each</p>
+                                <p className="text-xs text-clinical-charcoal/80 font-medium mt-0.5">{item.variant.label}</p>
+                                <p className="text-xs text-clinical-muted">{item.variant.detail} — ${item.variant.price.toFixed(2)} each</p>
                               </div>
                               <button
-                                onClick={() => removeFromCart(item.product.id)}
+                                onClick={() => removeFromCart(item.product.id, item.variant.id)}
                                 className="p-1 text-clinical-muted hover:text-clinical-crimson transition-colors opacity-0 group-hover:opacity-100"
                                 aria-label="Remove item"
                               >
@@ -92,7 +91,7 @@ export default function CartDrawer() {
                             <div className="flex items-center justify-between mt-3">
                               <div className="flex items-center gap-2">
                                 <button
-                                  onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                                  onClick={() => updateQuantity(item.product.id, item.variant.id, item.quantity - 1)}
                                   className="flex h-7 w-7 items-center justify-center rounded-full border border-clinical-gray-dark text-clinical-charcoal hover:border-clinical-crimson hover:text-clinical-crimson transition-colors"
                                   aria-label="Decrease quantity"
                                 >
@@ -100,7 +99,7 @@ export default function CartDrawer() {
                                 </button>
                                 <span className="w-6 text-center text-sm font-semibold text-clinical-charcoal">{item.quantity}</span>
                                 <button
-                                  onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                                  onClick={() => updateQuantity(item.product.id, item.variant.id, item.quantity + 1)}
                                   className="flex h-7 w-7 items-center justify-center rounded-full border border-clinical-gray-dark text-clinical-charcoal hover:border-clinical-crimson hover:text-clinical-crimson transition-colors"
                                   aria-label="Increase quantity"
                                 >
@@ -108,7 +107,7 @@ export default function CartDrawer() {
                                 </button>
                               </div>
                               <span className="font-semibold text-clinical-charcoal text-sm">
-                                ${(item.product.price * item.quantity).toFixed(2)}
+                                ${(item.variant.price * item.quantity).toFixed(2)}
                               </span>
                             </div>
                             {item.product.category === 'supplement' && (
@@ -133,7 +132,7 @@ export default function CartDrawer() {
                     </div>
                     <div className="flex justify-between text-clinical-muted">
                       <span>Shipping</span>
-                      <span className="font-medium text-clinical-charcoal">${shipping.toFixed(2)}</span>
+                      <span className="font-medium text-clinical-charcoal">Included</span>
                     </div>
                     <div className="flex justify-between border-t border-clinical-gray-dark pt-2 text-base">
                       <span className="font-bold text-clinical-charcoal">Total</span>

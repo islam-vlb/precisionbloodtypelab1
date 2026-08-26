@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Menu, X, ChevronDown, ShoppingCart, Search, FlaskConical } from 'lucide-react'
 import CartDrawer from '@/components/CartDrawer'
 import { useCart } from '@/components/CartProvider'
-import { products } from '@/lib/supabase'
+import { products, getStartingPrice } from '@/lib/supabase'
 import { BUSINESS } from '@/lib/config'
 
 export default function Header() {
@@ -115,7 +115,7 @@ export default function Header() {
                               {product.description}
                             </p>
                             <p className="text-sm font-semibold text-clinical-charcoal mt-1.5">
-                              ${product.price.toFixed(2)}
+                              From ${getStartingPrice(product).toFixed(2)}
                             </p>
                           </div>
                         </Link>

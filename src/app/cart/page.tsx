@@ -6,8 +6,7 @@ import { Trash2, Plus, Minus, ShoppingCart, ArrowRight } from 'lucide-react'
 
 export default function CartPage() {
   const { items, removeFromCart, updateQuantity, subtotal } = useCart()
-  const shipping = 7.95
-  const total = subtotal + (items.length > 0 ? shipping : 0)
+  const total = subtotal
 
   if (items.length === 0) {
     return (
@@ -33,7 +32,7 @@ export default function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-4">
             {items.map((item) => (
-              <div key={item.product.id} className="group rounded-2xl border border-clinical-gray-dark bg-clinical-white p-6 hover:border-clinical-crimson/30 transition-colors">
+              <div key={`${item.product.id}::${item.variant.id}`} className="group rounded-2xl border border-clinical-gray-dark bg-clinical-white p-6 hover:border-clinical-crimson/30 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4 flex-1">
                     <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl border ${
@@ -47,7 +46,8 @@ export default function CartPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-heading font-bold text-clinical-charcoal">{item.product.name}</h3>
-                      <p className="text-sm text-clinical-muted">${item.product.price.toFixed(2)} each</p>
+                      <p className="text-sm text-clinical-charcoal/80 font-medium">{item.variant.label}</p>
+                      <p className="text-xs text-clinical-muted">{item.variant.detail} — ${item.variant.price.toFixed(2)} each</p>
                       {item.product.category === 'supplement' && (
                         <p className="mt-2 text-xs text-clinical-crimson/80">
                           These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
@@ -58,7 +58,7 @@ export default function CartPage() {
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item.product.id, item.variant.id, item.quantity - 1)}
                         className="flex h-8 w-8 items-center justify-center rounded-full border border-clinical-gray-dark text-clinical-charcoal hover:border-clinical-crimson hover:text-clinical-crimson transition-colors"
                         aria-label="Decrease quantity"
                       >
@@ -66,7 +66,7 @@ export default function CartPage() {
                       </button>
                       <span className="w-8 text-center font-semibold text-clinical-charcoal">{item.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item.product.id, item.variant.id, item.quantity + 1)}
                         className="flex h-8 w-8 items-center justify-center rounded-full border border-clinical-gray-dark text-clinical-charcoal hover:border-clinical-crimson hover:text-clinical-crimson transition-colors"
                         aria-label="Increase quantity"
                       >
@@ -74,10 +74,10 @@ export default function CartPage() {
                       </button>
                     </div>
                     <span className="font-semibold text-clinical-charcoal min-w-[80px] text-right">
-                      ${(item.product.price * item.quantity).toFixed(2)}
+                      ${(item.variant.price * item.quantity).toFixed(2)}
                     </span>
                     <button
-                      onClick={() => removeFromCart(item.product.id)}
+                      onClick={() => removeFromCart(item.product.id, item.variant.id)}
                       className="p-2 text-clinical-muted hover:text-clinical-crimson transition-colors"
                       aria-label="Remove item"
                     >
@@ -94,9 +94,9 @@ export default function CartPage() {
               <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-4">Order Summary</h2>
               <div className="space-y-3 text-sm">
                 {items.map((item) => (
-                  <div key={item.product.id} className="flex justify-between text-clinical-muted">
-                    <span className="truncate pr-2">{item.product.name} × {item.quantity}</span>
-                    <span className="font-semibold text-clinical-charcoal flex-shrink-0">${(item.product.price * item.quantity).toFixed(2)}</span>
+                  <div key={`${item.product.id}::${item.variant.id}`} className="flex justify-between text-clinical-muted">
+                    <span className="truncate pr-2">{item.product.name} — {item.variant.label} × {item.quantity}</span>
+                    <span className="font-semibold text-clinical-charcoal flex-shrink-0">${(item.variant.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
                 <div className="border-t border-clinical-gray-dark pt-3 space-y-2">
@@ -106,7 +106,7 @@ export default function CartPage() {
                   </div>
                   <div className="flex justify-between text-clinical-muted">
                     <span>Shipping</span>
-                    <span className="font-semibold text-clinical-charcoal">${shipping.toFixed(2)}</span>
+                    <span className="font-semibold text-clinical-charcoal">Included</span>
                   </div>
                   <div className="flex justify-between border-t border-clinical-gray-dark pt-2 text-base">
                     <span className="font-bold text-clinical-charcoal">Total</span>

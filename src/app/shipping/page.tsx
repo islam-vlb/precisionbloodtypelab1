@@ -13,7 +13,7 @@ export default function ShippingPage() {
         <div className="space-y-8 text-clinical-muted leading-relaxed">
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">1. Shipping Method</h2>
-            <p>All orders are shipped via USPS Priority Mail for a flat rate of $7.95 per order.</p>
+            <p>Shipping is included at no additional charge with every order. Orders are processed within 1-2 business days and typically arrive within 3-5 business days via USPS Priority Mail. We ship to all 50 US states and the District of Columbia.</p>
             <p>Orders ship from: {BUSINESS.fulfillmentAddress}</p>
           </section>
           <section>
@@ -30,7 +30,7 @@ export default function ShippingPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">5. Tracking</h2>
-            <p>A tracking number will be provided once your order ships. You can use this to monitor your delivery.</p>
+            <p>A tracking number will be provided once your order ships. You can use this to check the status of your delivery.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">6. Shipping Address</h2>

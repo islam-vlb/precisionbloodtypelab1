@@ -4,11 +4,13 @@ import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Check, ShoppingCart, ChevronRight, FlaskConical, Microscope, Shield, Clock, Users } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
-import { products } from '@/lib/supabase'
+import { products, getDefaultVariant, getStartingPrice } from '@/lib/supabase'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const mainProduct = products[0]
 const supplementProduct = products[1]
+const mainProductDefaultVariant = getDefaultVariant(mainProduct)
+const supplementProductDefaultVariant = getDefaultVariant(supplementProduct)
 
 export default function HomePage() {
   const { addToCart } = useCart()
@@ -116,7 +118,7 @@ export default function HomePage() {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <button
-                  onClick={() => addToCart(mainProduct)}
+                  onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
                   className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -247,7 +249,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-3xl lg:text-4xl font-bold font-heading text-clinical-charcoal mb-4">
-                  ${mainProduct.price.toFixed(2)}
+                  Starting at ${getStartingPrice(mainProduct).toFixed(2)}
                 </p>
                 <p className="text-base text-clinical-muted leading-relaxed mb-8">
                   {mainProduct.longDescription}
@@ -264,7 +266,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <button
-                    onClick={() => addToCart(mainProduct)}
+                    onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
                     className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -383,7 +385,7 @@ export default function HomePage() {
                   Blood Health Support Formula
                 </h2>
                 <p className="text-3xl lg:text-4xl font-bold font-heading text-clinical-charcoal mb-6">
-                  ${supplementProduct.price.toFixed(2)}
+                  Starting at ${getStartingPrice(supplementProduct).toFixed(2)}
                 </p>
                 <p className="text-base text-clinical-muted leading-relaxed mb-6">
                   {supplementProduct.longDescription}
@@ -400,7 +402,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <button
-                    onClick={() => addToCart(supplementProduct)}
+                    onClick={() => addToCart(supplementProduct, supplementProductDefaultVariant)}
                     className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -465,7 +467,7 @@ export default function HomePage() {
               Simple, private, at-home testing with results available in minutes.
             </p>
             <button
-              onClick={() => addToCart(mainProduct)}
+              onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
               className="inline-flex items-center gap-3 rounded-lg bg-clinical-crimson px-10 py-5 font-heading font-semibold text-clinical-white hover:bg-clinical-crimson-light transition-all duration-200 group relative overflow-hidden text-lg"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />

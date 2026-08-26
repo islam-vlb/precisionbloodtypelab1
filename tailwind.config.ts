@@ -16,6 +16,8 @@ const config: Config = {
           blue: '#EEF2FA',
           'blue-dark': '#DDE4F0',
           muted: '#6B6B7B',
+          gold: '#B8862E',
+          'gold-light': '#F6ECD9',
         },
       },
       fontFamily: {

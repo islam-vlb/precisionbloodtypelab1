@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { products } from '@/lib/supabase'
+import { products, getStartingPrice } from '@/lib/supabase'
 import { Check, ChevronRight, Shield, Clock, Users, Package, FlaskConical, HelpCircle, Truck, Lock } from 'lucide-react'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 import { BUSINESS } from '@/lib/config'
@@ -69,8 +69,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight mb-4">
                 {product.name}
               </h1>
-              <p className="text-3xl lg:text-4xl font-bold font-heading text-clinical-charcoal mb-6">
-                ${product.price.toFixed(2)}
+              <p className="text-2xl lg:text-3xl font-bold font-heading text-clinical-charcoal mb-6">
+                Starting at ${getStartingPrice(product).toFixed(2)}
               </p>
               <p className="text-base text-clinical-muted leading-relaxed mb-8">
                 {product.description}
@@ -109,8 +109,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <h1 className="font-heading text-3xl sm:text-4xl font-bold text-clinical-charcoal tracking-tight mb-4">
                   {product.name}
                 </h1>
-                <p className="text-3xl font-bold font-heading text-clinical-charcoal mb-6">
-                  ${product.price.toFixed(2)}
+                <p className="text-2xl font-bold font-heading text-clinical-charcoal mb-6">
+                  Starting at ${getStartingPrice(product).toFixed(2)}
                 </p>
                 <p className="text-base text-clinical-muted leading-relaxed">{product.description}</p>
               </div>
@@ -154,7 +154,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     className="h-full w-full object-contain"
                   />
                 </div>
-                <p className="text-3xl font-bold font-heading text-clinical-charcoal mb-4">${product.price.toFixed(2)}</p>
                 <ProductPurchaseBox product={product} />
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-8 w-12 rounded bg-clinical-white border border-clinical-gray-dark flex items-center justify-center">
@@ -262,7 +261,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div className="rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark">
                   <Truck className="h-6 w-6 text-clinical-crimson mb-3" />
                   <h3 className="font-heading font-bold text-clinical-charcoal mb-1">Shipping & Returns</h3>
-                  <p className="text-sm text-clinical-muted mb-3">USPS Priority Mail, $7.95 flat rate. 30-day returns.</p>
+                  <p className="text-sm text-clinical-muted mb-3">USPS Priority Mail, shipping included. 30-day returns.</p>
                   <Link href="/shipping" className="text-sm text-clinical-crimson font-semibold hover:text-clinical-crimson-light transition-colors">
                     View Policy <ChevronRight className="h-4 w-4 inline" />
                   </Link>
@@ -300,7 +299,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     </div>
                     <h3 className="font-heading text-xl font-bold text-clinical-charcoal mb-2">{relatedProduct.name}</h3>
                     <p className="text-sm text-clinical-muted leading-relaxed mb-4">{relatedProduct.description}</p>
-                    <p className="text-2xl font-bold font-heading text-clinical-charcoal mb-6">${relatedProduct.price.toFixed(2)}</p>
+                    <p className="text-2xl font-bold font-heading text-clinical-charcoal mb-6">Starting at ${getStartingPrice(relatedProduct).toFixed(2)}</p>
                     <div className="flex flex-wrap gap-3">
                       <Link
                         href={`/product/${relatedProduct.slug}`}

@@ -3,14 +3,14 @@
 import React from 'react'
 import { ShoppingCart } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
-import { Product } from '@/lib/supabase'
+import { Product, getDefaultVariant } from '@/lib/supabase'
 
 export default function AddToCartButton({ product }: { product: Product }) {
   const { addToCart } = useCart()
   const [added, setAdded] = React.useState(false)
 
   const handleClick = () => {
-    addToCart(product)
+    addToCart(product, getDefaultVariant(product))
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
   }

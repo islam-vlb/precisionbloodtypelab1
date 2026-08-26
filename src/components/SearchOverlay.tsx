@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useCart } from '@/components/CartProvider'
-import { products, type Product } from '@/lib/supabase'
+import { products, getStartingPrice, type Product } from '@/lib/supabase'
 import { Search, X, ShoppingCart, ChevronRight } from 'lucide-react'
 
 export default function SearchOverlay() {
@@ -160,7 +160,7 @@ export default function SearchOverlay() {
                         </div>
                         <div className="flex items-center gap-3 flex-shrink-0">
                           <span className="text-sm font-semibold text-clinical-charcoal">
-                            ${product.price.toFixed(2)}
+                            From ${getStartingPrice(product).toFixed(2)}
                           </span>
                           <ChevronRight className="h-4 w-4 text-clinical-muted" />
                         </div>

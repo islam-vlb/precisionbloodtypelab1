@@ -114,6 +114,8 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-xs text-clinical-white/50">
               <p>⚠️ Individuals under 18 are not permitted to purchase</p>
               <span className="hidden sm:inline text-clinical-white/20">|</span>
+              <p>Personal information will not be shared with Third Parties</p>
+              <span className="hidden sm:inline text-clinical-white/20">|</span>
               <p>Charges appear as {BUSINESS.descriptor} on your statement.</p>
             </div>
             <div className="flex items-center gap-3">
@@ -126,6 +128,7 @@ export default function Footer() {
                   <div className="h-5 w-5 rounded-full bg-[#F79E1B]/80 -ml-2" />
                 </div>
               </div>
+              <span className="text-xs text-clinical-white/50">Mastercard</span>
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-clinical-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -13,8 +13,7 @@ const US_STATES = [
 export default function CheckoutPage() {
   const { items, subtotal } = useCart()
   const [agreed, setAgreed] = useState(false)
-  const shipping = 7.95
-  const total = subtotal + (items.length > 0 ? shipping : 0)
+  const total = subtotal
   const hasSupplement = items.some((item) => item.product.category === 'supplement')
 
   if (items.length === 0) {
@@ -118,12 +117,13 @@ export default function CheckoutPage() {
                 <div className="h-8 w-12 rounded border border-clinical-gray-dark bg-clinical-white flex items-center justify-center">
                   <span className="text-xs font-bold text-clinical-charcoal">VISA</span>
                 </div>
-                <div className="h-8 w-12 rounded border border-clinical-gray-dark bg-clinical-white flex items-center justify-center">
+                <div className="h-8 w-12 rounded border border-clinical-gray-dark bg-clinical-white flex items-center justify-center gap-1" title="Mastercard">
                   <div className="flex">
                     <div className="h-4 w-4 rounded-full bg-[#EB001B]/80" />
                     <div className="h-4 w-4 rounded-full bg-[#F79E1B]/80 -ml-2" />
                   </div>
                 </div>
+                <span className="text-xs text-clinical-muted">Visa &amp; Mastercard accepted</span>
               </div>
             </div>
 
@@ -157,9 +157,12 @@ export default function CheckoutPage() {
               <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-4">Order Summary</h2>
               <div className="space-y-3 text-sm">
                 {items.map((item) => (
-                  <div key={item.product.id} className="flex justify-between text-clinical-muted">
-                    <span className="truncate pr-2">{item.product.name} × {item.quantity}</span>
-                    <span className="font-semibold text-clinical-charcoal flex-shrink-0">${(item.product.price * item.quantity).toFixed(2)}</span>
+                  <div key={`${item.product.id}::${item.variant.id}`} className="flex justify-between text-clinical-muted">
+                    <div className="pr-2">
+                      <p className="text-clinical-charcoal font-medium">{item.product.name} — {item.variant.label}</p>
+                      <p className="text-xs">{item.variant.detail} × {item.quantity}</p>
+                    </div>
+                    <span className="font-semibold text-clinical-charcoal flex-shrink-0">${(item.variant.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
                 <div className="border-t border-clinical-gray-dark pt-3 space-y-2">
@@ -169,7 +172,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex justify-between text-clinical-muted">
                     <span>Shipping</span>
-                    <span className="font-semibold text-clinical-charcoal">${shipping.toFixed(2)}</span>
+                    <span className="font-semibold text-clinical-charcoal">Included</span>
                   </div>
                   <div className="flex justify-between border-t border-clinical-gray-dark pt-2 text-base">
                     <span className="font-bold text-clinical-charcoal">Total</span>
