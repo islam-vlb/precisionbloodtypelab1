@@ -8,6 +8,7 @@ export interface ProductVariant {
   testPackCount?: number
   bottleCount?: number
   capsuleCount?: number
+  image?: string
 }
 
 export const products = [
@@ -26,7 +27,7 @@ export const products = [
       'Results available in minutes at home',
       'For informational and educational purposes',
     ],
-    image: '/images/blood-type-test-pack.png',
+    image: '/images/products/Gemini_Generated_Image_4pdrzy4pdrzy4pdr.jpg',
     medicalDisclaimer: 'This product is intended for general informational and educational purposes. It is not intended for use prior to blood transfusion, surgery, or medical procedures, and does not replace laboratory blood typing performed by a healthcare provider. Always confirm your blood type through a licensed medical professional before any medical decision. Results can be shared with your physician to discuss next steps.',
     defaultVariantId: 'single-test-pack',
     variants: [
@@ -38,6 +39,7 @@ export const products = [
         section: 'Single Test Offer',
         isBundle: false,
         testPackCount: 1,
+        image: '/images/products/Gemini_Generated_Image_4pdrzy4pdrzy4pdr.jpg',
       },
       {
         id: 'test-starter-support',
@@ -49,6 +51,7 @@ export const products = [
         testPackCount: 1,
         bottleCount: 1,
         capsuleCount: 30,
+        image: '/images/products/Gemini_Generated_Image_il8612il8612il86.jpg',
       },
       {
         id: 'test-standard-support',
@@ -60,6 +63,7 @@ export const products = [
         testPackCount: 1,
         bottleCount: 1,
         capsuleCount: 60,
+        image: '/images/products/Gemini_Generated_Image_krnmkrnmkrnmkrnm.jpg',
       },
       {
         id: 'test-extended-support',
@@ -71,6 +75,7 @@ export const products = [
         testPackCount: 1,
         bottleCount: 1,
         capsuleCount: 90,
+        image: '/images/products/Gemini_Generated_Image_ljfx6tljfx6tljfx.jpg',
       },
       {
         id: '2-test-value-bundle',
@@ -80,6 +85,7 @@ export const products = [
         section: 'Multi-Test Value Offers',
         isBundle: false,
         testPackCount: 2,
+        image: '/images/products/Gemini_Generated_Image_shzmlbshzmlbshzm.jpg',
       },
       {
         id: '2-test-starter-support-bundle',
@@ -91,6 +97,7 @@ export const products = [
         testPackCount: 2,
         bottleCount: 1,
         capsuleCount: 30,
+        image: '/images/products/Gemini_Generated_Image_t0zm5jt0zm5jt0zm.jpg',
       },
       {
         id: '2-test-standard-support-bundle',
@@ -102,6 +109,7 @@ export const products = [
         testPackCount: 2,
         bottleCount: 1,
         capsuleCount: 60,
+        image: '/images/products/Gemini_Generated_Image_t44zf8t44zf8t44z.jpg',
       },
       {
         id: '2-test-extended-support-bundle',
@@ -113,6 +121,7 @@ export const products = [
         testPackCount: 2,
         bottleCount: 1,
         capsuleCount: 90,
+        image: '/images/products/Gemini_Generated_Image_ue2xomue2xomue2x.jpg',
       },
       {
         id: '3-test-value-bundle',
@@ -139,7 +148,7 @@ export const products = [
       'Beet root extract included, traditionally used in daily wellness routines',
       'One capsule serving per day, easy to incorporate into a daily routine',
     ],
-    image: '/images/blood-health-support-formula.png',
+    image: '/images/supplements/Gemini_Generated_Image_9p5htz9p5htz9p5h.jpg',
     fdaDisclosure: 'These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any new supplement, especially if you have a medical condition, are pregnant or nursing, or are taking blood-thinning medication.',
     supplementDisclaimer: 'This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any new supplement.',
     defaultVariantId: 'standard-bottle',
@@ -153,6 +162,7 @@ export const products = [
         isBundle: false,
         bottleCount: 1,
         capsuleCount: 30,
+        image: '/images/supplements/Gemini_Generated_Image_9p5htz9p5htz9p5h.jpg',
       },
       {
         id: 'standard-bottle',
@@ -163,6 +173,7 @@ export const products = [
         isBundle: false,
         bottleCount: 1,
         capsuleCount: 60,
+        image: '/images/supplements/Gemini_Generated_Image_ahckiyahckiyahck.jpg',
       },
       {
         id: 'extended-bottle',
@@ -173,6 +184,7 @@ export const products = [
         isBundle: false,
         bottleCount: 1,
         capsuleCount: 90,
+        image: '/images/supplements/Gemini_Generated_Image_b8gbp1b8gbp1b8gb.jpg',
       },
       {
         id: 'complete-bottle',
@@ -183,6 +195,7 @@ export const products = [
         isBundle: false,
         bottleCount: 1,
         capsuleCount: 120,
+        image: '/images/supplements/Gemini_Generated_Image_mc4wufmc4wufmc4w.jpg',
       },
       {
         id: '2-bottle-value-bundle',
@@ -193,6 +206,7 @@ export const products = [
         isBundle: true,
         bottleCount: 2,
         capsuleCount: 120,
+        image: '/images/supplements/Gemini_Generated_Image_qbde14qbde14qbde.jpg',
       },
       {
         id: '3-bottle-savings-bundle',
@@ -203,6 +217,7 @@ export const products = [
         isBundle: true,
         bottleCount: 3,
         capsuleCount: 180,
+        image: '/images/supplements/Gemini_Generated_Image_y18saxy18saxy18s.jpg',
       },
       {
         id: '4-bottle-best-value-bundle',
@@ -213,6 +228,7 @@ export const products = [
         isBundle: true,
         bottleCount: 4,
         capsuleCount: 240,
+        image: '/images/supplements/Gemini_Generated_Image_z4dqzbz4dqzbz4dq.jpg',
       },
     ] satisfies ProductVariant[],
   },

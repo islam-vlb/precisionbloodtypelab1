@@ -14,15 +14,18 @@ const SECTION_ORDER = [
   'Multi-Test Value Offers',
 ]
 
-export default function ProductPurchaseBox({ product }: { product: Product }) {
+export default function ProductPurchaseBox({ product, selectedVariantId, onVariantChange }: { product: Product, selectedVariantId?: string, onVariantChange?: (id: string) => void }) {
   const { addToCart } = useCart()
   const defaultVariant = getDefaultVariant(product)
-  const [selectedVariantId, setSelectedVariantId] = useState(defaultVariant.id)
+  const [internalSelectedVariantId, setInternalSelectedVariantId] = useState(defaultVariant.id)
   const [quantity, setQuantity] = useState(1)
   const [added, setAdded] = useState(false)
 
+  const currentSelectedVariantId = selectedVariantId ?? internalSelectedVariantId
+  const setSelectedVariantId = onVariantChange ?? setInternalSelectedVariantId
+
   const selectedVariant: ProductVariant =
-    product.variants.find((v) => v.id === selectedVariantId) ?? defaultVariant
+    product.variants.find((v) => v.id === currentSelectedVariantId) ?? defaultVariant
 
   const sections = SECTION_ORDER.filter((section) =>
     product.variants.some((v) => v.section === section)

@@ -1,21 +1,26 @@
+'use client'
+
+import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { products, getStartingPrice } from '@/lib/supabase'
 import { Check, ChevronRight, Shield, Clock, Users, Package, FlaskConical, HelpCircle, Truck, Lock } from 'lucide-react'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 import { BUSINESS } from '@/lib/config'
+import { useState } from 'react'
 
-export function generateStaticParams() {
-  return products.map((product) => ({ slug: product.slug }))
-}
-
-export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
+export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params)
   const product = products.find((p) => p.slug === slug)
   if (!product) return notFound()
 
   const isSupplement = product.category === 'supplement'
   const relatedProduct = products.find((p) => p.slug !== product.slug)
+  const defaultVariant = product.variants.find((v) => v.id === product.defaultVariantId) ?? product.variants[0]
+  const [selectedVariantId, setSelectedVariantId] = useState(defaultVariant.id)
+
+  const selectedVariant = product.variants.find((v) => v.id === selectedVariantId) ?? defaultVariant
+  const productImage = selectedVariant.image ?? product.image
 
   const faqs = [
     {
@@ -57,7 +62,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="relative aspect-square rounded-3xl bg-clinical-gray overflow-hidden border border-clinical-gray-dark flex items-center justify-center p-8">
               <img
-                src={product.image}
+                src={productImage}
                 alt={product.name}
                 className="h-full w-full object-contain"
               />
@@ -77,7 +82,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex-1 min-w-[200px]">
-                  <ProductPurchaseBox product={product} />
+                  <ProductPurchaseBox product={product} selectedVariantId={selectedVariantId} onVariantChange={setSelectedVariantId} />
                 </div>
                 <Link
                   href="#how-it-works"
@@ -149,12 +154,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <div className="sticky top-24 rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark">
                 <div className="aspect-square rounded-xl bg-clinical-white border border-clinical-gray-dark flex items-center justify-center mb-6 p-6">
                   <img
-                    src={product.image}
+                    src={productImage}
                     alt={product.name}
                     className="h-full w-full object-contain"
                   />
                 </div>
-                <ProductPurchaseBox product={product} />
+                <ProductPurchaseBox product={product} selectedVariantId={selectedVariantId} onVariantChange={setSelectedVariantId} />
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-8 w-12 rounded bg-clinical-white border border-clinical-gray-dark flex items-center justify-center">
                     <span className="text-xs font-bold text-clinical-charcoal">VISA</span>
