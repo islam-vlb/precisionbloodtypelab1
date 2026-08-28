@@ -24,20 +24,32 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
   const faqs = [
     {
-      q: 'Is this for medical or surgical use?',
-      a: 'No. This product is intended for general informational and educational purposes. It is not intended for use prior to blood transfusion, surgery, or medical procedures. Always confirm your blood type through a licensed medical professional before any medical decision.',
+      q: 'What is the Blood Type Test Pack?',
+      a: 'It is an at-home wellness kit that gives you an informational reading of your ABO and Rh blood type. Everything you need is included in the pack, and the reading is available within minutes when the instructions are followed.',
     },
     {
-      q: 'How many tests are in a pack?',
-      a: 'Each pack includes multiple tests so you can confirm your results or test additional family members. The exact count is listed on the product packaging.',
+      q: 'Is this a diagnostic test?',
+      a: 'No. This is an informational and general wellness tool. It is not a diagnostic device and is not intended to diagnose, treat, cure, or prevent any disease or condition.',
+    },
+    {
+      q: 'How do I get my results?',
+      a: 'Follow the enclosed instructions to complete your at-home reading. Your informational result is available within minutes, right where you are.',
+    },
+    {
+      q: 'How long does it take to get results?',
+      a: 'Results are available within minutes. Once you complete the steps included with your pack, your informational reading is ready right away.',
+    },
+    {
+      q: 'How private is my information?',
+      a: 'Your kit ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.',
+    },
+    {
+      q: 'Can I share my results with my doctor?',
+      a: 'Yes. You can bring your at-home reading to discuss as part of a broader conversation with a qualified healthcare provider.',
     },
     {
       q: 'What is your return policy?',
       a: 'We accept returns within 30 days of the date received. Please see our Refund Policy for full details.',
-    },
-    {
-      q: 'How is my information protected?',
-      a: 'Personal information will not be shared with Third Parties. We only collect the information necessary to process and ship your order.',
     },
   ]
 
