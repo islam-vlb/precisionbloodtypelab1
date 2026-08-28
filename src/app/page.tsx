@@ -34,7 +34,7 @@ export default function HomePage() {
   const steps = [
     {
       num: '01',
-      title: 'Choose Your Test',
+      title: 'Order & Receive Your Test Kit',
       desc: `Select the ${mainProduct.name} that's right for you.`,
       icon: <Microscope className="h-6 w-6" />,
     },
