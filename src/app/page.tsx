@@ -34,20 +34,20 @@ export default function HomePage() {
   const steps = [
     {
       num: '01',
-      title: 'Prick & Collect',
-      desc: 'Use the included lancet for a simple finger-prick and collect a small blood sample.',
+      title: 'Choose Your Test',
+      desc: `Select the ${mainProduct.name} that's right for you.`,
       icon: <Microscope className="h-6 w-6" />,
     },
     {
       num: '02',
-      title: 'Apply to Card',
-      desc: 'Apply your sample to the test card and wait the recommended time.',
+      title: 'Test at Home',
+      desc: 'Follow the simple instructions and collect a small finger-prick sample in the comfort of your home.',
       icon: <FlaskConical className="h-6 w-6" />,
     },
     {
       num: '03',
-      title: 'Read Your Result',
-      desc: 'Match the colors on your card to the included chart to determine your blood type.',
+      title: 'Get Results in Minutes',
+      desc: 'Read your blood type result in minutes using the included color chart.',
       icon: <Shield className="h-6 w-6" />,
     },
   ]
@@ -307,10 +307,10 @@ export default function HomePage() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Process</span>
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight">
-                How It Works
+                Your {mainProduct.name}, Made Simple
               </h2>
               <p className="mt-4 text-lg text-clinical-muted max-w-2xl mx-auto">
-                Three simple steps to discover your blood type from home.
+                Simple testing. Results in minutes. All from the comfort of home.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
