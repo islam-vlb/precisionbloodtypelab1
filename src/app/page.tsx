@@ -26,7 +26,7 @@ export default function HomePage() {
     'Adjustable intensity levels for gentle stimulation',
     'Mild heat therapy function',
     'Compact, portable design for home use',
-    'Simple one-button controls',
+    'Simple power, mode, and intensity controls',
     'Rechargeable battery',
     'Includes user guide',
   ]
@@ -55,7 +55,7 @@ export default function HomePage() {
   const kitContents = [
     { name: 'Support Device', desc: 'Portable circulation-support unit' },
     { name: 'Charging Cable', desc: 'For the rechargeable battery' },
-    { name: 'Intensity Control', desc: 'Simple one-button adjustable settings' },
+    { name: 'Intensity Control', desc: 'Adjustable via the +/- buttons on the device' },
     { name: 'Heat Function', desc: 'Mild heat therapy mode' },
     { name: 'User Guide', desc: 'Step-by-step guidance included' },
   ]

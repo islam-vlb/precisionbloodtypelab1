@@ -23,11 +23,11 @@ export const products = [
       'Adjustable intensity levels for gentle stimulation',
       'Mild heat therapy function',
       'Compact, portable design for home use',
-      'Simple one-button controls',
+      'Simple power, mode, and intensity controls',
       'Rechargeable battery',
       'Includes user guide',
     ],
-    image: '/images/products/Gemini_Generated_Image_4pdrzy4pdrzy4pdr.jpg',
+    image: '/images/products/device-1x.jpg',
     medicalDisclaimer: 'This product is a general wellness circulation-support device. It does not test, sample, diagnose, or analyze blood or any biological material. It is not a substitute for professional medical advice. Always consult a qualified healthcare provider regarding any health concerns, especially if you have a pacemaker or other implanted medical device.',
     defaultVariantId: 'single-device',
     variants: [
@@ -39,7 +39,7 @@ export const products = [
         section: 'Single Device Offer',
         isBundle: false,
         deviceCount: 1,
-        image: '/images/products/Gemini_Generated_Image_4pdrzy4pdrzy4pdr.jpg',
+        image: '/images/products/device-1x.jpg',
       },
       {
         id: 'device-starter-support',
@@ -51,7 +51,7 @@ export const products = [
         deviceCount: 1,
         bottleCount: 1,
         capsuleCount: 30,
-        image: '/images/products/Gemini_Generated_Image_il8612il8612il86.jpg',
+        image: '/images/products/device-1x-supp30.jpg',
       },
       {
         id: 'device-standard-support',
@@ -63,7 +63,7 @@ export const products = [
         deviceCount: 1,
         bottleCount: 1,
         capsuleCount: 60,
-        image: '/images/products/Gemini_Generated_Image_krnmkrnmkrnmkrnm.jpg',
+        image: '/images/products/device-1x-supp60.jpg',
       },
       {
         id: 'device-extended-support',
@@ -75,7 +75,7 @@ export const products = [
         deviceCount: 1,
         bottleCount: 1,
         capsuleCount: 90,
-        image: '/images/products/Gemini_Generated_Image_ljfx6tljfx6tljfx.jpg',
+        image: '/images/products/device-1x-supp90.jpg',
       },
       {
         id: '2-device-value-bundle',
@@ -85,7 +85,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: false,
         deviceCount: 2,
-        image: '/images/products/Gemini_Generated_Image_shzmlbshzmlbshzm.jpg',
+        image: '/images/products/device-2x.jpg',
       },
       {
         id: '2-device-starter-support-bundle',
@@ -97,7 +97,7 @@ export const products = [
         deviceCount: 2,
         bottleCount: 1,
         capsuleCount: 30,
-        image: '/images/products/Gemini_Generated_Image_t0zm5jt0zm5jt0zm.jpg',
+        image: '/images/products/device-2x-supp30.jpg',
       },
       {
         id: '2-device-standard-support-bundle',
@@ -109,7 +109,7 @@ export const products = [
         deviceCount: 2,
         bottleCount: 1,
         capsuleCount: 60,
-        image: '/images/products/Gemini_Generated_Image_t44zf8t44zf8t44z.jpg',
+        image: '/images/products/device-2x-supp60.jpg',
       },
       {
         id: '2-device-extended-support-bundle',
@@ -121,7 +121,7 @@ export const products = [
         deviceCount: 2,
         bottleCount: 1,
         capsuleCount: 90,
-        image: '/images/products/Gemini_Generated_Image_ue2xomue2xomue2x.jpg',
+        image: '/images/products/device-2x-supp90.jpg',
       },
       {
         id: '3-device-value-bundle',
@@ -131,6 +131,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: false,
         deviceCount: 3,
+        image: '/images/products/device-3x.jpg',
       },
     ] satisfies ProductVariant[],
   },

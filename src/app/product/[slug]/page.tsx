@@ -204,7 +204,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { num: '01', title: 'Charge & Power On', desc: 'Charge the rechargeable battery, then power on the device with a simple one-button control.' },
+                  { num: '01', title: 'Charge & Power On', desc: 'Charge the rechargeable battery, then power on the device using the control panel.' },
                   { num: '02', title: 'Choose Your Setting', desc: 'Select a comfortable intensity level and add mild heat therapy if you like.' },
                   { num: '03', title: 'Relax Into Your Routine', desc: 'Use the device for a few minutes as part of your daily circulation-support routine.' },
                 ].map((step) => (
@@ -225,7 +225,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 {[
                   { name: 'Support Device', desc: 'Portable circulation-support unit' },
                   { name: 'Charging Cable', desc: 'For the rechargeable battery' },
-                  { name: 'Intensity Control', desc: 'Simple one-button adjustable settings' },
+                  { name: 'Intensity Control', desc: 'Adjustable via the +/- buttons on the device' },
                   { name: 'Heat Function', desc: 'Mild heat therapy mode' },
                   { name: 'User Guide', desc: 'Step-by-step guidance included' },
                 ].map((item, i) => (
