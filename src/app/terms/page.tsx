@@ -56,8 +56,8 @@ export default function TermsPage() {
             <p>Returns are accepted within 30 days of the date received. Please see our Refund Policy for full details.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">8. Medical Disclaimer</h2>
-            <p>The Blood Type Test Pack is intended for general informational and educational purposes. It is not intended for use prior to blood transfusion, surgery, or medical procedures.</p>
+            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">8. Product Disclaimer</h2>
+            <p>The Circulation Support Device is a general wellness product using gentle electrical stimulation and mild heat therapy. It does not test, sample, diagnose, or analyze blood or any biological material, and it is not a substitute for professional medical advice. Consult a qualified healthcare provider before use, especially if you have a pacemaker or other implanted medical device.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">9. Supplement Disclaimer</h2>

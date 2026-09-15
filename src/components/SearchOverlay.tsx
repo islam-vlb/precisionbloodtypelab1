@@ -67,7 +67,7 @@ export default function SearchOverlay() {
       if (e.key === 'Enter' && filteredProducts[selectedIndex]) {
         setIsOpen(false)
         const product = filteredProducts[selectedIndex]
-        if (product.category === 'test-kit') {
+        if (product.category === 'device') {
           window.location.href = '/'
         } else {
           window.location.href = `/product/${product.slug}`
@@ -80,7 +80,7 @@ export default function SearchOverlay() {
 
   const handleProductClick = (product: Product) => {
     setIsOpen(false)
-    if (product.category === 'test-kit') {
+    if (product.category === 'device') {
       window.location.href = '/'
     } else {
       window.location.href = `/product/${product.slug}`
@@ -144,12 +144,12 @@ export default function SearchOverlay() {
                         }`}
                       >
                         <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border ${
-                          product.category === 'test-kit'
+                          product.category === 'device'
                             ? 'border-clinical-crimson/20 bg-clinical-crimson/5'
                             : 'border-clinical-blue-dark bg-clinical-blue'
                         }`}>
                           <span className={`text-lg font-bold font-heading ${
-                            product.category === 'test-kit' ? 'text-clinical-crimson' : 'text-clinical-crimson'
+                            product.category === 'device' ? 'text-clinical-crimson' : 'text-clinical-crimson'
                           }`}>
                             {product.name.charAt(0)}
                           </span>

@@ -19,7 +19,7 @@ export default function OrderConfirmationPage() {
             <Link href="/" className="inline-flex items-center justify-center gap-2 rounded-lg bg-clinical-charcoal px-8 py-3 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-colors">
               Return to Home
             </Link>
-            <Link href="/product/blood-type-test-pack" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-clinical-charcoal px-8 py-3 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-colors">
+            <Link href="/product/circulation-support-device" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-clinical-charcoal px-8 py-3 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-colors">
               Continue Shopping
             </Link>
           </div>

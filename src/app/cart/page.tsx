@@ -36,7 +36,7 @@ export default function CartPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4 flex-1">
                     <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl border ${
-                      item.product.category === 'test-kit'
+                      item.product.category === 'device'
                         ? 'border-clinical-crimson/20 bg-clinical-crimson/5'
                         : 'border-clinical-blue-dark bg-clinical-blue'
                     }`}>

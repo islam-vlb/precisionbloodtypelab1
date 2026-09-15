@@ -9,9 +9,9 @@ import { BUSINESS } from '@/lib/config'
 const SECTION_ORDER = [
   'Regular Product Options',
   'Bundle Offers',
-  'Single Test Offer',
-  'Test + Support Bundle Offers',
-  'Multi-Test Value Offers',
+  'Single Device Offer',
+  'Device + Support Bundle Offers',
+  'Multi-Device Value Offers',
 ]
 
 export default function ProductPurchaseBox({ product, selectedVariantId, onVariantChange }: { product: Product, selectedVariantId?: string, onVariantChange?: (id: string) => void }) {

@@ -87,17 +87,17 @@ export default function Header() {
                       {products.map((product) => (
                         <Link
                           key={product.id}
-                          href={product.category === 'test-kit' ? '/' : `/product/${product.slug}`}
+                          href={product.category === 'device' ? '/' : `/product/${product.slug}`}
                           className="group flex items-start gap-4 rounded-xl p-3 hover:bg-clinical-gray transition-colors"
                           onClick={() => setProductsOpen(false)}
                         >
                           <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border ${
-                            product.category === 'test-kit'
+                            product.category === 'device'
                               ? 'border-clinical-crimson/20 bg-clinical-crimson/5'
                               : 'border-clinical-blue-dark bg-clinical-blue'
                           }`}>
                             <FlaskConical className={`h-5 w-5 ${
-                              product.category === 'test-kit' ? 'text-clinical-crimson' : 'text-clinical-crimson'
+                              product.category === 'device' ? 'text-clinical-crimson' : 'text-clinical-crimson'
                             }`} />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -105,9 +105,9 @@ export default function Header() {
                               <h3 className="font-semibold text-clinical-charcoal text-sm group-hover:text-clinical-crimson transition-colors">
                                 {product.name}
                               </h3>
-                              {product.category === 'test-kit' && (
+                              {product.category === 'device' && (
                                 <span className="rounded-full bg-clinical-crimson/10 px-2 py-0.5 text-xs font-medium text-clinical-crimson">
-                                  Primary
+                                  Featured
                                 </span>
                               )}
                             </div>
@@ -147,10 +147,10 @@ export default function Header() {
 
           <div className="flex items-center gap-2 lg:gap-3">
             <Link
-              href="/product/blood-type-test-pack"
+              href="/product/circulation-support-device"
               className="hidden md:inline-flex items-center gap-2 rounded-lg bg-clinical-charcoal px-5 py-2.5 text-sm font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-colors"
             >
-              Explore Test Pack
+              Explore the Device
             </Link>
             <button
               onClick={() => {
@@ -196,7 +196,7 @@ export default function Header() {
                     {products.map((product) => (
                       <Link
                         key={product.id}
-                        href={product.category === 'test-kit' ? '/' : `/product/${product.slug}`}
+                        href={product.category === 'device' ? '/' : `/product/${product.slug}`}
                         className="block px-4 py-2.5 text-sm text-clinical-charcoal hover:text-clinical-crimson hover:bg-clinical-gray rounded-lg transition-colors"
                         onClick={() => {
                           setProductsOpen(false)
@@ -232,11 +232,11 @@ export default function Header() {
               </Link>
               <div className="mx-4 mt-2">
                 <Link
-                  href="/product/blood-type-test-pack"
+                  href="/product/circulation-support-device"
                   className="block w-full rounded-lg bg-clinical-charcoal px-4 py-3 text-center text-sm font-semibold text-clinical-white"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Explore Test Pack
+                  Explore the Device
                 </Link>
               </div>
             </nav>

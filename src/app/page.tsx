@@ -23,67 +23,67 @@ export default function HomePage() {
   }, [])
 
   const features = [
-    'Determines ABO blood group and Rh factor',
-    'Multiple tests included in each pack',
-    'Simple finger-prick sample collection',
-    'Easy-to-read color result chart included',
-    'Results available in minutes at home',
-    'For informational and educational purposes',
+    'Adjustable intensity levels for gentle stimulation',
+    'Mild heat therapy function',
+    'Compact, portable design for home use',
+    'Simple one-button controls',
+    'Rechargeable battery',
+    'Includes user guide',
   ]
 
   const steps = [
     {
       num: '01',
-      title: 'Order & Receive Your Test Kit',
+      title: 'Order & Receive Your Device',
       desc: `Select the ${mainProduct.name} that's right for you.`,
       icon: <Microscope className="h-6 w-6" />,
     },
     {
       num: '02',
-      title: 'Test at Home',
-      desc: 'Follow the simple instructions and collect a small finger-prick sample in the comfort of your home.',
+      title: 'Use It Daily',
+      desc: 'Follow the simple instructions, choose your intensity level, and use the device for a few minutes in the comfort of your home.',
       icon: <FlaskConical className="h-6 w-6" />,
     },
     {
       num: '03',
-      title: 'Get Results in Minutes',
-      desc: 'Read your blood type result in minutes using the included color chart.',
+      title: 'Feel the Difference',
+      desc: 'Make it part of your daily wellness routine to help support normal circulation over time.',
       icon: <Shield className="h-6 w-6" />,
     },
   ]
 
   const kitContents = [
-    { name: 'Multiple Tests', desc: 'Several test cards included per pack' },
-    { name: 'Lancet', desc: 'Sterile finger-prick collection device' },
-    { name: 'Test Card', desc: 'ABO and Rh factor testing surface' },
-    { name: 'Result Chart', desc: 'Easy-to-read color reference guide' },
-    { name: 'Instructions', desc: 'Step-by-step guidance included' },
+    { name: 'Support Device', desc: 'Portable circulation-support unit' },
+    { name: 'Charging Cable', desc: 'For the rechargeable battery' },
+    { name: 'Intensity Control', desc: 'Simple one-button adjustable settings' },
+    { name: 'Heat Function', desc: 'Mild heat therapy mode' },
+    { name: 'User Guide', desc: 'Step-by-step guidance included' },
   ]
 
   const faqs = [
     {
-      q: 'What is the Blood Type Test Pack?',
-      a: 'It is an at-home wellness kit that gives you an informational reading of your ABO and Rh blood type. Everything you need is included in the pack, and the reading is available within minutes when the instructions are followed.',
+      q: 'What is the Circulation Support Device?',
+      a: 'It is a portable, at-home wellness device that uses gentle electrical stimulation and mild heat therapy to help support normal circulation in the legs and feet as part of a daily wellness routine. It does not test, sample, or analyze blood in any way.',
     },
     {
-      q: 'Is this a diagnostic test?',
-      a: 'No. This is an informational and general wellness tool. It is not a diagnostic device and is not intended to diagnose, treat, cure, or prevent any disease or condition.',
+      q: 'How often should I use it?',
+      a: 'Most users incorporate a short session into their daily routine. Start with a shorter session at a lower intensity and follow the included user guide for recommended usage.',
     },
     {
-      q: 'How do I get my results?',
-      a: 'Follow the enclosed instructions to complete your at-home reading. Your informational result is available within minutes, right where you are.',
+      q: 'How do the intensity levels work?',
+      a: 'The device offers adjustable intensity levels so you can choose a gentle stimulation level that is comfortable for you, and increase it gradually as you get used to the sensation.',
     },
     {
-      q: 'How long does it take to get results?',
-      a: 'Results are available within minutes. Once you complete the steps included with your pack, your informational reading is ready right away.',
+      q: 'How long does the battery last?',
+      a: 'The device uses a rechargeable battery designed to support multiple sessions on a single charge. Simply recharge it using the included cable when needed.',
+    },
+    {
+      q: 'Is it safe to use if I have a pacemaker or other medical condition?',
+      a: 'This device uses electrical stimulation, so it is not recommended for individuals with a pacemaker or other implanted medical device. Always consult a qualified healthcare provider before use if you have any health concerns.',
     },
     {
       q: 'How private is my information?',
-      a: 'Your kit ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.',
-    },
-    {
-      q: 'Can I share my results with my doctor?',
-      a: 'Yes. You can bring your at-home reading to discuss as part of a broader conversation with a qualified healthcare provider.',
+      a: 'Your device ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.',
     },
     {
       q: 'What is your return policy?',
@@ -105,21 +105,21 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 rounded-full border border-clinical-gray-dark bg-clinical-gray px-4 py-1.5 mb-8">
                 <span className="h-1.5 w-1.5 rounded-full bg-clinical-crimson animate-pulse" />
                 <span className="text-xs font-semibold uppercase tracking-widest text-clinical-charcoal">
-                  At-Home Blood Type Testing
+                  Daily Circulation Support
                 </span>
               </div>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-clinical-charcoal leading-[0.95] tracking-tight">
-                Know Your
+                Support Your
                 <br />
                 <span className="text-clinical-crimson relative inline-block">
-                  Blood Type.
+                  Circulation.
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 5.5C47.5 2.5 152.5 2.5 199 5.5" stroke="#8B1E2D" strokeWidth="3" strokeLinecap="round" opacity="0.3" />
                   </svg>
                 </span>
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-clinical-muted leading-relaxed max-w-lg">
-                Simple. Private. At Home.
+                Gentle. Portable. At Home.
               </p>
               <p className="mt-4 text-base text-clinical-muted leading-relaxed max-w-lg">
                 {mainProduct.longDescription}
@@ -131,7 +131,7 @@ export default function HomePage() {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   <ShoppingCart className="h-5 w-5 relative z-10" />
-                  <span className="relative z-10">Explore the Test Pack</span>
+                  <span className="relative z-10">Explore the Device</span>
                   <ChevronRight className="h-4 w-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
                 </button>
                 <Link
@@ -144,11 +144,11 @@ export default function HomePage() {
               <div className="mt-12 flex items-center gap-8">
                 <div className="flex items-center gap-2">
                   <Clock className="h-5 w-5 text-clinical-crimson" />
-                  <span className="text-sm font-medium text-clinical-charcoal">Results in Minutes</span>
+                  <span className="text-sm font-medium text-clinical-charcoal">Adjustable Intensity</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-clinical-crimson" />
-                  <span className="text-sm font-medium text-clinical-charcoal">Private Testing</span>
+                  <span className="text-sm font-medium text-clinical-charcoal">Rechargeable Battery</span>
                 </div>
               </div>
             </div>
@@ -157,22 +157,22 @@ export default function HomePage() {
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-clinical-blue via-clinical-white to-clinical-gray" />
                 <div className="absolute inset-4 rounded-2xl border border-clinical-gray-dark/50 bg-clinical-white overflow-hidden">
                   <img
-                    src="https://img.magnific.com/free-photo/medical-banner-with-doctor-wearing-goggles_23-2149611193.jpg?semt=ais_test_b&w=740&q=80"
-                    alt="Medical laboratory professional"
-                    className="h-full w-full object-cover"
+                    src={mainProduct.image}
+                    alt={mainProduct.name}
+                    className="h-full w-full object-contain p-8"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-clinical-charcoal/20 to-transparent" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 lg:-right-8 h-24 w-24 rounded-xl border border-clinical-gray-dark bg-clinical-white shadow-lg flex items-center justify-center">
                   <div className="text-center">
-                    <p className="text-2xl font-bold font-heading text-clinical-crimson">ABO</p>
-                    <p className="text-[10px] uppercase tracking-widest text-clinical-muted mt-0.5">+ Rh</p>
+                    <p className="text-2xl font-bold font-heading text-clinical-crimson">Heat</p>
+                    <p className="text-[10px] uppercase tracking-widest text-clinical-muted mt-0.5">Therapy</p>
                   </div>
                 </div>
                 <div className="absolute -top-2 -left-2 lg:-left-6 h-20 w-20 rounded-xl border border-clinical-gray-dark bg-clinical-white shadow-lg flex items-center justify-center">
                   <div className="text-center">
-                    <p className="text-lg font-bold font-heading text-clinical-charcoal">5 min</p>
-                    <p className="text-[10px] uppercase tracking-widest text-clinical-muted mt-0.5">Results</p>
+                    <p className="text-lg font-bold font-heading text-clinical-charcoal">USB-C</p>
+                    <p className="text-[10px] uppercase tracking-widest text-clinical-muted mt-0.5">Charging</p>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BLOOD TYPE VISUALIZATION */}
+      {/* HOW CIRCULATION SUPPORT WORKS */}
       <section className="bg-clinical-gray py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, #0A0A0B 1px, transparent 0)',
@@ -191,49 +191,37 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-16">
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight">
-                Blood Type System
+                Gentle Stimulation, Mild Heat
               </h2>
               <p className="mt-4 text-lg text-clinical-muted max-w-2xl mx-auto">
-                Understanding the four primary ABO blood groups and Rh factor classification.
+                Two comfort features working together to support your daily circulation routine.
               </p>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               {[
-                { type: 'A', desc: 'Has A antigens', color: 'bg-clinical-crimson' },
-                { type: 'B', desc: 'Has B antigens', color: 'bg-blue-600' },
-                { type: 'AB', desc: 'Has both A & B', color: 'bg-purple-600' },
-                { type: 'O', desc: 'Has neither antigen', color: 'bg-clinical-charcoal' },
-              ].map((blood) => (
-                <div key={blood.type} className="group relative rounded-2xl bg-clinical-white p-6 lg:p-8 border border-clinical-gray-dark hover:border-clinical-crimson/30 transition-all duration-300 hover:shadow-xl hover:shadow-clinical-crimson/10 hover:-translate-y-1">
+                { type: 'Stimulation', desc: 'Adjustable, gentle electrical stimulation levels', color: 'bg-clinical-crimson' },
+                { type: 'Heat', desc: 'Mild heat therapy for everyday comfort', color: 'bg-clinical-charcoal' },
+              ].map((mode) => (
+                <div key={mode.type} className="group relative rounded-2xl bg-clinical-white p-6 lg:p-8 border border-clinical-gray-dark hover:border-clinical-crimson/30 transition-all duration-300 hover:shadow-xl hover:shadow-clinical-crimson/10 hover:-translate-y-1">
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${blood.color} text-white font-heading text-xl font-bold`}>
-                      {blood.type}
+                    <span className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${mode.color} text-white font-heading text-sm font-bold`}>
+                      {mode.type === 'Stimulation' ? 'STIM' : 'HEAT'}
                     </span>
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-clinical-charcoal mb-1">Type {blood.type}</h3>
-                  <p className="text-sm text-clinical-muted">{blood.desc}</p>
+                  <h3 className="font-heading text-lg font-bold text-clinical-charcoal mb-1">{mode.type}</h3>
+                  <p className="text-sm text-clinical-muted">{mode.desc}</p>
                 </div>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-              <div className="flex items-center gap-3 rounded-xl bg-clinical-white px-6 py-4 border border-clinical-gray-dark">
-                <span className="text-2xl font-bold font-heading text-clinical-charcoal">Rh+</span>
-                <span className="text-sm text-clinical-muted">Rh factor present</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl bg-clinical-white px-6 py-4 border border-clinical-gray-dark">
-                <span className="text-2xl font-bold font-heading text-clinical-charcoal">Rh−</span>
-                <span className="text-sm text-clinical-muted">Rh factor absent</span>
-              </div>
-            </div>
             <p className="mt-10 text-center text-xs text-clinical-muted max-w-xl mx-auto leading-relaxed">
-              For educational and informational purposes. Confirm your blood type through a qualified healthcare professional before any medical decision.
+              For general wellness and informational purposes. Consult a qualified healthcare provider regarding any health concerns, especially if you have a pacemaker or other implanted medical device.
             </p>
           </div>
         </ScrollReveal>
       </section>
 
-      {/* FEATURED TEST PACK */}
-      <section className="bg-clinical-white py-20 lg:py-28 relative" id="test-pack">
+      {/* FEATURED DEVICE */}
+      <section className="bg-clinical-white py-20 lg:py-28 relative" id="device">
         <ScrollReveal>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -241,7 +229,7 @@ export default function HomePage() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Featured Product</span>
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight">
-                Blood Type Test Pack
+                Circulation Support Device
               </h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -283,7 +271,7 @@ export default function HomePage() {
                     <ChevronRight className="h-4 w-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                   <Link
-                    href="/product/blood-type-test-pack"
+                    href="/product/circulation-support-device"
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-all duration-200"
                   >
                     View Product
@@ -310,7 +298,7 @@ export default function HomePage() {
                 Your {mainProduct.name}, Made Simple
               </h2>
               <p className="mt-4 text-lg text-clinical-muted max-w-2xl mx-auto">
-                Simple testing. Results in minutes. All from the comfort of home.
+                Simple to use. Feel the difference. All from the comfort of home.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -344,13 +332,13 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2 rounded-full border border-clinical-crimson/20 bg-clinical-crimson/5 px-4 py-1.5 mb-6">
-                <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Kit Contents</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">What's Included</span>
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight">
                 What&apos;s Inside
               </h2>
               <p className="mt-4 text-lg text-clinical-muted max-w-2xl mx-auto">
-                Everything you need for at-home blood type testing, included in each pack.
+                Everything you need to get started, included with your device.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
@@ -469,10 +457,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative">
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-white tracking-tight mb-6">
-              Ready to know your blood type?
+              Ready to support your circulation?
             </h2>
             <p className="text-lg text-clinical-white/60 mb-10 max-w-2xl mx-auto">
-              Simple, private, at-home testing with results available in minutes.
+              Gentle, portable, at-home circulation support — ready when you are.
             </p>
             <button
               onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
@@ -480,7 +468,7 @@ export default function HomePage() {
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               <ShoppingCart className="h-5 w-5 relative z-10" />
-              <span className="relative z-10">Order Your Pack</span>
+              <span className="relative z-10">Order Your Device</span>
               <ChevronRight className="h-5 w-5 relative z-10 group-hover:translate-x-0.5 transition-transform" />
             </button>
             <p className="mt-6 text-sm text-clinical-white/40">

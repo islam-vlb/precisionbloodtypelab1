@@ -24,7 +24,7 @@ export default function Footer() {
                 <span className="font-heading text-lg font-bold tracking-tight">{BUSINESS.brandName}</span>
               </Link>
               <p className="text-sm text-clinical-white/60 leading-relaxed max-w-sm">
-                Simple, private at-home blood type testing. Know your ABO and Rh blood type from the comfort of home.
+                A gentle, portable circulation-support device for your daily wellness routine, from the comfort of home.
               </p>
               <div className="mt-6 space-y-2 text-sm text-clinical-white/50">
                 <p>{BUSINESS.name}</p>
@@ -40,7 +40,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link href="/" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
-                    Blood Type Test Pack
+                    Circulation Support Device
                   </Link>
                 </li>
                 <li>

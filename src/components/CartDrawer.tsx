@@ -65,7 +65,7 @@ export default function CartDrawer() {
                       <div key={`${item.product.id}::${item.variant.id}`} className="group rounded-xl border border-clinical-gray-dark p-4 hover:border-clinical-crimson/30 transition-colors">
                         <div className="flex gap-4">
                           <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg border ${
-                            item.product.category === 'test-kit'
+                            item.product.category === 'device'
                               ? 'border-clinical-crimson/20 bg-clinical-crimson/5'
                               : 'border-clinical-blue-dark bg-clinical-blue'
                           }`}>

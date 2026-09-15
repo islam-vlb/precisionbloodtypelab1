@@ -7,8 +7,8 @@ import CartProvider from '@/components/CartProvider'
 import SearchOverlay from '@/components/SearchOverlay'
 
 export const metadata: Metadata = {
-  title: 'CalaxoHealthyLifePerspective — Blood Type Test Pack',
-  description: 'Determine your ABO and Rh blood type from home with the Blood Type Test Pack from TrevCore LLC.',
+  title: 'CalaxoHealthyLifePerspective — Circulation Support Device',
+  description: 'Support your daily circulation with the Circulation Support Device from TrevCore LLC — gentle electrical stimulation and mild heat therapy for home use.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -24,28 +24,28 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
   const faqs = [
     {
-      q: 'What is the Blood Type Test Pack?',
-      a: 'It is an at-home wellness kit that gives you an informational reading of your ABO and Rh blood type. Everything you need is included in the pack, and the reading is available within minutes when the instructions are followed.',
+      q: 'What is the Circulation Support Device?',
+      a: 'It is a portable, at-home wellness device that uses gentle electrical stimulation and mild heat therapy to help support normal circulation in the legs and feet as part of a daily wellness routine. It does not test, sample, or analyze blood in any way.',
     },
     {
-      q: 'Is this a diagnostic test?',
-      a: 'No. This is an informational and general wellness tool. It is not a diagnostic device and is not intended to diagnose, treat, cure, or prevent any disease or condition.',
+      q: 'How often should I use it?',
+      a: 'Most users incorporate a short session into their daily routine. Start with a shorter session at a lower intensity and follow the included user guide for recommended usage.',
     },
     {
-      q: 'How do I get my results?',
-      a: 'Follow the enclosed instructions to complete your at-home reading. Your informational result is available within minutes, right where you are.',
+      q: 'How do the intensity levels work?',
+      a: 'The device offers adjustable intensity levels so you can choose a gentle stimulation level that is comfortable for you, and increase it gradually as you get used to the sensation.',
     },
     {
-      q: 'How long does it take to get results?',
-      a: 'Results are available within minutes. Once you complete the steps included with your pack, your informational reading is ready right away.',
+      q: 'How long does the battery last?',
+      a: 'The device uses a rechargeable battery designed to support multiple sessions on a single charge. Simply recharge it using the included cable when needed.',
+    },
+    {
+      q: 'Is it safe to use if I have a pacemaker or other medical condition?',
+      a: 'This device uses electrical stimulation, so it is not recommended for individuals with a pacemaker or other implanted medical device. Always consult a qualified healthcare provider before use if you have any health concerns.',
     },
     {
       q: 'How private is my information?',
-      a: 'Your kit ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.',
-    },
-    {
-      q: 'Can I share my results with my doctor?',
-      a: 'Yes. You can bring your at-home reading to discuss as part of a broader conversation with a qualified healthcare provider.',
+      a: 'Your device ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.',
     },
     {
       q: 'What is your return policy?',
@@ -60,7 +60,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           <ol className="flex items-center gap-2 text-sm">
             <li><Link href="/" className="text-clinical-crimson hover:text-clinical-crimson-light transition-colors font-medium">Home</Link></li>
             <li className="text-clinical-gray-dark">/</li>
-            <li><Link href="/product/blood-type-test-pack" className="text-clinical-crimson hover:text-clinical-crimson-light transition-colors font-medium">Blood Type Test Pack</Link></li>
+            <li><Link href="/product/circulation-support-device" className="text-clinical-crimson hover:text-clinical-crimson-light transition-colors font-medium">Circulation Support Device</Link></li>
             {isSupplement && (
               <>
                 <li className="text-clinical-gray-dark">/</li>
@@ -81,7 +81,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </div>
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-clinical-crimson/20 bg-clinical-crimson/5 px-3 py-1 mb-4">
-                <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">At-Home Test Kit</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Wellness Device</span>
               </span>
               <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight mb-4">
                 {product.name}
@@ -106,15 +106,15 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               <div className="grid grid-cols-3 gap-4 mb-8">
                 <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
                   <Clock className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
-                  <span className="text-xs font-medium text-clinical-charcoal">Results in Minutes</span>
+                  <span className="text-xs font-medium text-clinical-charcoal">Daily Use</span>
                 </div>
                 <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
                   <Shield className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
-                  <span className="text-xs font-medium text-clinical-charcoal">Private Testing</span>
+                  <span className="text-xs font-medium text-clinical-charcoal">Non-Diagnostic</span>
                 </div>
                 <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
                   <Users className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
-                  <span className="text-xs font-medium text-clinical-charcoal">Multiple Tests</span>
+                  <span className="text-xs font-medium text-clinical-charcoal">For Everyday Use</span>
                 </div>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 <div className="mt-6 pt-6 border-t border-clinical-gray-dark">
                   <p className="text-sm text-clinical-muted mb-2">Looking for our main product?</p>
                   <Link href="/" className="inline-flex items-center gap-1 text-clinical-crimson font-semibold hover:text-clinical-crimson-light transition-colors text-sm">
-                    Blood Type Test Pack <ChevronRight className="h-4 w-4" />
+                    Circulation Support Device <ChevronRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           </div>
         )}
 
-        {/* ADDITIONAL SECTIONS FOR TEST KIT */}
+        {/* ADDITIONAL SECTIONS FOR DEVICE */}
         {!isSupplement && (
           <div className="mt-20 space-y-20">
             <section id="how-it-works">
@@ -204,9 +204,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { num: '01', title: 'Prick & Collect', desc: 'Use the included lancet for a simple finger-prick and collect a small blood sample.' },
-                  { num: '02', title: 'Apply to Card', desc: 'Apply your sample to the test card and wait the recommended time.' },
-                  { num: '03', title: 'Read Your Result', desc: 'Match the colors on your card to the included chart to determine your blood type.' },
+                  { num: '01', title: 'Charge & Power On', desc: 'Charge the rechargeable battery, then power on the device with a simple one-button control.' },
+                  { num: '02', title: 'Choose Your Setting', desc: 'Select a comfortable intensity level and add mild heat therapy if you like.' },
+                  { num: '03', title: 'Relax Into Your Routine', desc: 'Use the device for a few minutes as part of your daily circulation-support routine.' },
                 ].map((step) => (
                   <div key={step.num} className="rounded-2xl bg-clinical-gray p-8 border border-clinical-gray-dark text-center">
                     <span className="text-4xl font-bold font-heading text-clinical-crimson/20">{step.num}</span>
@@ -223,11 +223,11 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {[
-                  { name: 'Multiple Tests', desc: 'Several test cards included per pack' },
-                  { name: 'Lancet', desc: 'Sterile finger-prick collection device' },
-                  { name: 'Test Card', desc: 'ABO and Rh factor testing surface' },
-                  { name: 'Result Chart', desc: 'Easy-to-read color reference guide' },
-                  { name: 'Instructions', desc: 'Step-by-step guidance included' },
+                  { name: 'Support Device', desc: 'Portable circulation-support unit' },
+                  { name: 'Charging Cable', desc: 'For the rechargeable battery' },
+                  { name: 'Intensity Control', desc: 'Simple one-button adjustable settings' },
+                  { name: 'Heat Function', desc: 'Mild heat therapy mode' },
+                  { name: 'User Guide', desc: 'Step-by-step guidance included' },
                 ].map((item, i) => (
                   <div key={item.name} className="rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark text-center">
                     <div className="flex items-center justify-center mb-3">
