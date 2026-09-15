@@ -2,18 +2,14 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Check, ShoppingCart, ChevronRight, Package, Zap, Shield, Clock, Users } from 'lucide-react'
-import { useCart } from '@/components/CartProvider'
-import { products, getDefaultVariant, getStartingPrice } from '@/lib/supabase'
+import { Check, ChevronRight, Package, Zap, Shield, Clock, Users } from 'lucide-react'
+import { products, getStartingPrice } from '@/lib/supabase'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const mainProduct = products[0]
 const supplementProduct = products[1]
-const mainProductDefaultVariant = getDefaultVariant(mainProduct)
-const supplementProductDefaultVariant = getDefaultVariant(supplementProduct)
 
 export default function HomePage() {
-  const { addToCart } = useCart()
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -260,15 +256,14 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <button
-                    onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
+                  <Link
+                    href="/product/circulation-support-device"
                     className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                    <ShoppingCart className="h-5 w-5 relative z-10" />
-                    <span className="relative z-10">Add to Cart</span>
+                    <span className="relative z-10">View Pricing Options</span>
                     <ChevronRight className="h-4 w-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
+                  </Link>
                   <Link
                     href="/product/circulation-support-device"
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-all duration-200"
@@ -396,15 +391,14 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <button
-                    onClick={() => addToCart(supplementProduct, supplementProductDefaultVariant)}
+                  <Link
+                    href="/product/blood-health-support-formula"
                     className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                    <ShoppingCart className="h-5 w-5 relative z-10" />
                     <span className="relative z-10">Explore Wellness Support</span>
                     <ChevronRight className="h-4 w-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
+                  </Link>
                   <Link
                     href="/product/blood-health-support-formula"
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-all duration-200"
@@ -461,15 +455,14 @@ export default function HomePage() {
             <p className="text-lg text-clinical-white/60 mb-10 max-w-2xl mx-auto">
               Gentle, portable, at-home circulation support — ready when you are.
             </p>
-            <button
-              onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
+            <Link
+              href="/product/circulation-support-device"
               className="inline-flex items-center gap-3 rounded-lg bg-clinical-crimson px-10 py-5 font-heading font-semibold text-clinical-white hover:bg-clinical-crimson-light transition-all duration-200 group relative overflow-hidden text-lg"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              <ShoppingCart className="h-5 w-5 relative z-10" />
               <span className="relative z-10">Order Your Device</span>
               <ChevronRight className="h-5 w-5 relative z-10 group-hover:translate-x-0.5 transition-transform" />
-            </button>
+            </Link>
             <p className="mt-6 text-sm text-clinical-white/40">
               {mainProduct.medicalDisclaimer}
             </p>
