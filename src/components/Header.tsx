@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown, ShoppingCart, Search, FlaskConical } from 'lucide-react'
+import { Menu, X, ChevronDown, ShoppingCart, Search, Package } from 'lucide-react'
 import CartDrawer from '@/components/CartDrawer'
 import { useCart } from '@/components/CartProvider'
 import { products, getStartingPrice } from '@/lib/supabase'
@@ -96,7 +96,7 @@ export default function Header() {
                               ? 'border-clinical-crimson/20 bg-clinical-crimson/5'
                               : 'border-clinical-blue-dark bg-clinical-blue'
                           }`}>
-                            <FlaskConical className={`h-5 w-5 ${
+                            <Package className={`h-5 w-5 ${
                               product.category === 'device' ? 'text-clinical-crimson' : 'text-clinical-crimson'
                             }`} />
                           </div>

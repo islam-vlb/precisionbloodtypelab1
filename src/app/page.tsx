@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Check, ShoppingCart, ChevronRight, FlaskConical, Microscope, Shield, Clock, Users } from 'lucide-react'
+import { Check, ShoppingCart, ChevronRight, Package, Zap, Shield, Clock, Users } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
 import { products, getDefaultVariant, getStartingPrice } from '@/lib/supabase'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -36,13 +36,13 @@ export default function HomePage() {
       num: '01',
       title: 'Order & Receive Your Device',
       desc: `Select the ${mainProduct.name} that's right for you.`,
-      icon: <Microscope className="h-6 w-6" />,
+      icon: <Package className="h-6 w-6" />,
     },
     {
       num: '02',
       title: 'Use It Daily',
       desc: 'Follow the simple instructions, choose your intensity level, and use the device for a few minutes in the comfort of your home.',
-      icon: <FlaskConical className="h-6 w-6" />,
+      icon: <Zap className="h-6 w-6" />,
     },
     {
       num: '03',
