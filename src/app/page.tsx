@@ -125,15 +125,14 @@ export default function HomePage() {
                 {mainProduct.longDescription}
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <button
-                  onClick={() => addToCart(mainProduct, mainProductDefaultVariant)}
+                <Link
+                  href={`/product/${mainProduct.slug}`}
                   className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  <ShoppingCart className="h-5 w-5 relative z-10" />
-                  <span className="relative z-10">Explore the Device</span>
+                  <span className="relative z-10">View Product</span>
                   <ChevronRight className="h-4 w-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                </Link>
                 <Link
                   href="#how-it-works"
                   className="inline-flex items-center gap-2 rounded-lg border-2 border-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-all duration-200"
