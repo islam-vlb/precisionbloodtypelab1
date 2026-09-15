@@ -92,16 +92,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               <p className="text-base text-clinical-muted leading-relaxed mb-8">
                 {product.description}
               </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex-1 min-w-[200px]">
-                  <ProductPurchaseBox product={product} selectedVariantId={selectedVariantId} onVariantChange={setSelectedVariantId} />
-                </div>
-                <Link
-                  href="#how-it-works"
-                  className="inline-flex items-center gap-2 rounded-lg border-2 border-clinical-charcoal px-6 py-4 font-heading font-semibold text-clinical-charcoal hover:bg-clinical-charcoal hover:text-clinical-white transition-all duration-200"
-                >
-                  How It Works
-                </Link>
+              <div className="mb-8">
+                <ProductPurchaseBox product={product} selectedVariantId={selectedVariantId} onVariantChange={setSelectedVariantId} />
               </div>
               <div className="grid grid-cols-3 gap-4 mb-8">
                 <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
