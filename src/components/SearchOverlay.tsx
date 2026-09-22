@@ -113,7 +113,7 @@ export default function SearchOverlay() {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search products, categories, ingredients..."
+                  placeholder="Search products, categories..."
                   className="flex-1 bg-transparent text-clinical-charcoal placeholder-clinical-muted outline-none text-base"
                 />
                 <button

@@ -14,8 +14,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const product = products.find((p) => p.slug === slug)
   if (!product) return notFound()
 
-  const isSupplement = product.category === 'supplement'
-  const relatedProduct = products.find((p) => p.slug !== product.slug)
   const defaultVariant = product.variants.find((v) => v.id === product.defaultVariantId) ?? product.variants[0]
   const [selectedVariantId, setSelectedVariantId] = useState(defaultVariant.id)
 
@@ -61,17 +59,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             <li><Link href="/" className="text-clinical-crimson hover:text-clinical-crimson-light transition-colors font-medium">Home</Link></li>
             <li className="text-clinical-gray-dark">/</li>
             <li><Link href="/product/circulation-support-device" className="text-clinical-crimson hover:text-clinical-crimson-light transition-colors font-medium">Circulation Support Device</Link></li>
-            {isSupplement && (
-              <>
-                <li className="text-clinical-gray-dark">/</li>
-                <li className="text-clinical-charcoal font-medium">{product.name}</li>
-              </>
-            )}
           </ol>
         </nav>
 
-        {!isSupplement ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="relative aspect-square rounded-3xl bg-clinical-gray overflow-hidden border border-clinical-gray-dark flex items-center justify-center p-8">
               <img
                 src={productImage}
@@ -110,86 +101,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 </div>
               </div>
             </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-12">
-              <div>
-                <h1 className="font-heading text-3xl sm:text-4xl font-bold text-clinical-charcoal tracking-tight mb-4">
-                  {product.name}
-                </h1>
-                <p className="text-2xl font-bold font-heading text-clinical-charcoal mb-6">
-                  Starting at ${getStartingPrice(product).toFixed(2)}
-                </p>
-                <p className="text-base text-clinical-muted leading-relaxed">{product.description}</p>
-              </div>
-
-              <div>
-                <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-4">What&apos;s Included</h2>
-                <ul className="space-y-3">
-                  {product.features.map((feature) => (
-                    <li key={feature} className="flex gap-3">
-                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-clinical-crimson/10 mt-0.5">
-                        <Check className="h-3 w-3 text-clinical-crimson" />
-                      </div>
-                      <span className="text-sm text-clinical-charcoal leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {isSupplement && (
-                <div>
-                  <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-4">Ingredients</h2>
-                  <div className="rounded-xl border border-clinical-gray-dark bg-clinical-gray p-6">
-                    <p className="text-sm text-clinical-charcoal leading-relaxed">
-                      For a full list of ingredients and amounts per serving, please refer to the Supplement Facts panel on the product packaging.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              <div className="rounded-xl border-2 border-clinical-crimson/20 bg-clinical-blue/50 p-6">
-                <p className="text-sm text-clinical-charcoal leading-relaxed">{product.fdaDisclosure}</p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark">
-                <div className="aspect-square rounded-xl bg-clinical-white border border-clinical-gray-dark flex items-center justify-center mb-6 p-6">
-                  <img
-                    src={productImage}
-                    alt={product.name}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-                <ProductPurchaseBox product={product} selectedVariantId={selectedVariantId} onVariantChange={setSelectedVariantId} />
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="h-8 w-12 rounded bg-clinical-white border border-clinical-gray-dark flex items-center justify-center">
-                    <span className="text-xs font-bold text-clinical-charcoal">VISA</span>
-                  </div>
-                  <div className="h-8 w-12 rounded bg-clinical-white border border-clinical-gray-dark flex items-center justify-center">
-                    <div className="flex">
-                      <div className="h-4 w-4 rounded-full bg-[#EB001B]/80" />
-                      <div className="h-4 w-4 rounded-full bg-[#F79E1B]/80 -ml-2" />
-                    </div>
-                  </div>
-                </div>
-                <p className="mt-4 text-xs text-clinical-muted">Charges will appear as {BUSINESS.descriptor} on your statement</p>
-                <div className="mt-6 pt-6 border-t border-clinical-gray-dark">
-                  <p className="text-sm text-clinical-muted mb-2">Looking for our main product?</p>
-                  <Link href="/" className="inline-flex items-center gap-1 text-clinical-crimson font-semibold hover:text-clinical-crimson-light transition-colors text-sm">
-                    Circulation Support Device <ChevronRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        </div>
 
         {/* ADDITIONAL SECTIONS FOR DEVICE */}
-        {!isSupplement && (
-          <div className="mt-20 space-y-20">
+        <div className="mt-20 space-y-20">
             <section id="how-it-works">
               <div className="text-center mb-12">
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">How It Works</h2>
@@ -294,36 +209,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               </div>
             </section>
 
-            {relatedProduct && (
-              <section>
-                <div className="text-center mb-12">
-                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">Related Wellness Product</h2>
-                </div>
-                <div className="max-w-2xl mx-auto">
-                  <div className="rounded-2xl bg-clinical-gray p-8 border border-clinical-gray-dark hover:border-clinical-crimson/30 transition-all duration-300">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="inline-flex rounded-full bg-clinical-blue px-3 py-1 text-xs font-semibold uppercase tracking-widest text-clinical-charcoal">
-                        {relatedProduct.category === 'supplement' ? 'Supplement' : 'Product'}
-                      </span>
-                    </div>
-                    <h3 className="font-heading text-xl font-bold text-clinical-charcoal mb-2">{relatedProduct.name}</h3>
-                    <p className="text-sm text-clinical-muted leading-relaxed mb-4">{relatedProduct.description}</p>
-                    <p className="text-2xl font-bold font-heading text-clinical-charcoal mb-6">Starting at ${getStartingPrice(relatedProduct).toFixed(2)}</p>
-                    <div className="flex flex-wrap gap-3">
-                      <Link
-                        href={`/product/${relatedProduct.slug}`}
-                        className="inline-flex items-center gap-2 rounded-lg bg-clinical-charcoal px-6 py-3 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-colors"
-                      >
-                        View Product
-                        <ChevronRight className="h-4 w-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )}
           </div>
-        )}
       </div>
     </div>
   )

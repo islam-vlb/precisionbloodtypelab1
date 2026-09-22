@@ -14,13 +14,10 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-6 text-clinical-muted leading-relaxed">
             <p>
-              TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide wellness devices and health supplements to customers across the United States.
+              TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide wellness devices to customers across the United States.
             </p>
             <p>
               Our mission is to make everyday wellness accessible and convenient. The Circulation Support Device is a portable, non-diagnostic device that uses gentle electrical stimulation and mild heat therapy to help support normal circulation in the legs and feet as part of a daily routine, from the privacy of home.
-            </p>
-            <p>
-              We also offer the Blood Health Support Formula, a daily nutritional supplement formulated with iron, vitamin B12, and folate that provides supplemental support for normal nutritional needs related to healthy blood levels, as part of a balanced diet. This product is not intended to diagnose, treat, cure, or prevent any disease.
             </p>
             <p>
               TrevCore LLC is committed to clear communication, accurate product information, and responsible customer service. All charges appear as {BUSINESS.descriptor} on your statement.

@@ -110,11 +110,6 @@ export default function CartDrawer() {
                                 ${(item.variant.price * item.quantity).toFixed(2)}
                               </span>
                             </div>
-                            {item.product.category === 'supplement' && (
-                              <p className="mt-2 text-[10px] text-clinical-crimson/80 leading-relaxed">
-                                These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
-                              </p>
-                            )}
                           </div>
                         </div>
                       </div>

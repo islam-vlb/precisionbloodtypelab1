@@ -60,27 +60,23 @@ export default function TermsPage() {
             <p>The Circulation Support Device is a general wellness product using gentle electrical stimulation and mild heat therapy. It does not test, sample, diagnose, or analyze blood or any biological material, and it is not a substitute for professional medical advice. Consult a qualified healthcare provider before use, especially if you have a pacemaker or other implanted medical device.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">9. Supplement Disclaimer</h2>
-            <p>The Blood Health Support Formula is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.</p>
-          </section>
-          <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">10. Age Requirement</h2>
+            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">9. Age Requirement</h2>
             <p>Individuals under 18 are not permitted to purchase from this site.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">11. Privacy</h2>
+            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">10. Privacy</h2>
             <p>Please review our Privacy Policy for information on how we collect and use your personal information.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">12. Governing Law</h2>
+            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">11. Governing Law</h2>
             <p>These terms are governed by the laws of the State of Oklahoma, United States.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">13. Contact</h2>
+            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">12. Contact</h2>
             <p>For questions about these terms, contact us at {BUSINESS.email}.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">14. Changes</h2>
+            <h2 className="font-heading text-xl font-bold text-clinical-charcoal mb-3">13. Changes</h2>
             <p>We reserve the right to update these terms at any time. Changes take effect immediately upon posting.</p>
           </section>
         </div>

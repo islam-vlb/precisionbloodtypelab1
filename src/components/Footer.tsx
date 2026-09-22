@@ -43,16 +43,6 @@ export default function Footer() {
                     Circulation Support Device
                   </Link>
                 </li>
-                <li>
-                  <Link href="/product/blood-health-support-formula" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
-                    Blood Health Support Formula
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/ingredients" className="text-sm text-clinical-white/70 hover:text-clinical-white transition-colors">
-                    Ingredients
-                  </Link>
-                </li>
               </ul>
             </div>
 

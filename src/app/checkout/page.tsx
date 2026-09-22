@@ -14,7 +14,6 @@ export default function CheckoutPage() {
   const { items, subtotal } = useCart()
   const [agreed, setAgreed] = useState(false)
   const total = subtotal
-  const hasSupplement = items.some((item) => item.product.category === 'supplement')
 
   if (items.length === 0) {
     return (
