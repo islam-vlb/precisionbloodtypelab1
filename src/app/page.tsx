@@ -7,6 +7,7 @@ import { products, getStartingPrice } from '@/lib/supabase'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const mainProduct = products[0]
+const secondaryProduct = products[1]
 
 export default function HomePage() {
   const [scrollY, setScrollY] = useState(0)
@@ -346,6 +347,60 @@ export default function HomePage() {
                   <p className="text-xs text-clinical-muted leading-relaxed">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* SECONDARY PRODUCT */}
+      <section className="bg-clinical-gray py-20 lg:py-28">
+        <ScrollReveal>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="order-2 lg:order-1 relative aspect-square max-w-md mx-auto lg:mx-0 w-full">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-clinical-blue to-clinical-gray" />
+                <div className="absolute inset-6 rounded-2xl border border-clinical-gray-dark bg-clinical-white flex items-center justify-center overflow-hidden p-6">
+                  <img
+                    src={secondaryProduct.image}
+                    alt={secondaryProduct.name}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <span className="inline-flex items-center gap-2 rounded-full border border-clinical-crimson/20 bg-clinical-crimson/5 px-4 py-1.5 mb-6">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Wellness Accessory</span>
+                </span>
+                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-clinical-charcoal tracking-tight mb-4">
+                  {secondaryProduct.name}
+                </h2>
+                <p className="text-3xl lg:text-4xl font-bold font-heading text-clinical-charcoal mb-6">
+                  Starting at ${getStartingPrice(secondaryProduct).toFixed(2)}
+                </p>
+                <p className="text-base text-clinical-muted leading-relaxed mb-6">
+                  {secondaryProduct.longDescription}
+                </p>
+                <div className="space-y-2 mb-8">
+                  {secondaryProduct.features.slice(0, 3).map((feature) => (
+                    <div key={feature} className="flex items-start gap-3">
+                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-clinical-crimson/10 mt-0.5">
+                        <Check className="h-3 w-3 text-clinical-crimson" />
+                      </div>
+                      <span className="text-sm text-clinical-charcoal leading-relaxed">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href={`/product/${secondaryProduct.slug}`}
+                    className="inline-flex items-center gap-3 rounded-lg bg-clinical-charcoal px-8 py-4 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-all duration-200 group relative overflow-hidden"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <span className="relative z-10">View Product</span>
+                    <ChevronRight className="h-4 w-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </ScrollReveal>
