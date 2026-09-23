@@ -25,7 +25,7 @@ export const products = [
       'Rechargeable battery',
       'Includes user guide',
     ],
-    image: '/images/products/device-1x.jpg',
+    image: '/images/products/calaxo/calaxo-device-1.png',
     medicalDisclaimer: 'This product is a general wellness circulation-support device. It does not test, sample, diagnose, or analyze blood or any biological material. It is not a substitute for professional medical advice. Always consult a qualified healthcare provider regarding any health concerns, especially if you have a pacemaker or other implanted medical device.',
     defaultVariantId: 'single-device',
     variants: [
@@ -37,7 +37,7 @@ export const products = [
         section: 'Single Device Offer',
         isBundle: false,
         deviceCount: 1,
-        image: '/images/products/device-1x.jpg',
+        image: '/images/products/calaxo/calaxo-device-1.png',
       },
       {
         id: 'device-starter-support',
@@ -47,7 +47,7 @@ export const products = [
         section: 'Single Device Offer',
         isBundle: true,
         deviceCount: 1,
-        image: '/images/products/device-1x.jpg',
+        image: '/images/products/calaxo/calaxo-device-1-plus-1socks.png',
       },
       {
         id: 'device-standard-support',
@@ -57,7 +57,7 @@ export const products = [
         section: 'Single Device Offer',
         isBundle: true,
         deviceCount: 1,
-        image: '/images/products/device-1x.jpg',
+        image: '/images/products/calaxo/calaxo-device-1-plus-2socks.png',
       },
       {
         id: 'device-extended-support',
@@ -67,7 +67,7 @@ export const products = [
         section: 'Single Device Offer',
         isBundle: true,
         deviceCount: 1,
-        image: '/images/products/device-1x.jpg',
+        image: '/images/products/calaxo/calaxo-device-1-plus-3socks.png',
       },
       {
         id: '2-device-value-bundle',
@@ -77,7 +77,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: false,
         deviceCount: 2,
-        image: '/images/products/device-2x.jpg',
+        image: '/images/products/calaxo/calaxo-device-2.png',
       },
       {
         id: '2-device-starter-support-bundle',
@@ -87,7 +87,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: true,
         deviceCount: 2,
-        image: '/images/products/device-2x.jpg',
+        image: '/images/products/calaxo/calaxo-device-2-plus-1socks.png',
       },
       {
         id: '2-device-standard-support-bundle',
@@ -97,7 +97,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: true,
         deviceCount: 2,
-        image: '/images/products/device-2x.jpg',
+        image: '/images/products/calaxo/calaxo-device-2-plus-2socks.png',
       },
       {
         id: '2-device-extended-support-bundle',
@@ -107,7 +107,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: true,
         deviceCount: 2,
-        image: '/images/products/device-2x.jpg',
+        image: '/images/products/calaxo/calaxo-device-2-plus-3socks.png',
       },
       {
         id: '3-device-value-bundle',
@@ -117,7 +117,7 @@ export const products = [
         section: 'Multi-Device Value Offers',
         isBundle: false,
         deviceCount: 3,
-        image: '/images/products/device-3x.jpg',
+        image: '/images/products/calaxo/calaxo-device-3.png',
       },
     ] satisfies ProductVariant[],
   },
@@ -135,7 +135,7 @@ export const products = [
       'Machine washable',
       'Pairs naturally with daily use of the Circulation Support Device',
     ],
-    image: '/images/products/compression-socks-1x.jpg',
+    image: '/images/products/calaxo/calaxo-socks-1-plus.png',
     medicalDisclaimer: 'This product is a general comfort accessory. It does not test, sample, diagnose, or analyze blood or any biological material, and it is not a substitute for professional medical advice. Consult a qualified healthcare provider regarding any health concerns.',
     defaultVariantId: 'standard-pair',
     variants: [
@@ -146,7 +146,7 @@ export const products = [
         price: 9.99,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/compression-socks-1x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-1-standard.png',
       },
       {
         id: 'standard-pair',
@@ -155,7 +155,7 @@ export const products = [
         price: 13.95,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/compression-socks-1x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-1-plus.png',
       },
       {
         id: 'extended-pair',
@@ -164,7 +164,7 @@ export const products = [
         price: 14.75,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/compression-socks-1x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-1-premium.png',
       },
       {
         id: 'complete-pair',
@@ -173,7 +173,7 @@ export const products = [
         price: 17.95,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/compression-socks-1x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-1-complete.png',
       },
       {
         id: '2-pair-value-bundle',
@@ -182,7 +182,7 @@ export const products = [
         price: 18.75,
         section: 'Bundle Offers',
         isBundle: true,
-        image: '/images/products/compression-socks-2x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-2.png',
       },
       {
         id: '3-pair-savings-bundle',
@@ -191,7 +191,7 @@ export const products = [
         price: 28.76,
         section: 'Bundle Offers',
         isBundle: true,
-        image: '/images/products/compression-socks-3x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-3.png',
       },
       {
         id: '4-pair-best-value-bundle',
@@ -200,7 +200,7 @@ export const products = [
         price: 38.64,
         section: 'Bundle Offers',
         isBundle: true,
-        image: '/images/products/compression-socks-4x.jpg',
+        image: '/images/products/calaxo/calaxo-socks-4.png',
       },
     ] satisfies ProductVariant[],
   },
