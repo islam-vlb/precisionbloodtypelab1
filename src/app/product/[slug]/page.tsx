@@ -149,6 +149,38 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               </div>
             </section>
 
+            {product.companionAccessory && (
+              <section>
+                <div className="text-center mb-12">
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">
+                    Companion Accessory: {product.companionAccessory.name}
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-6 items-start max-w-3xl mx-auto">
+                  <div className="relative aspect-square rounded-2xl overflow-hidden bg-clinical-gray border border-clinical-gray-dark">
+                    <img
+                      src={product.companionAccessory.image}
+                      alt={product.companionAccessory.name}
+                      className="h-full w-full object-contain p-3"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm text-clinical-muted leading-relaxed mb-4">
+                      {product.companionAccessory.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {product.companionAccessory.features.map((f) => (
+                        <li key={f} className="text-sm text-clinical-charcoal">• {f}</li>
+                      ))}
+                    </ul>
+                    <p className="text-xs text-clinical-muted/70 mt-4">
+                      Included starting with the Plus option — see pricing options above for exactly what&apos;s included at each tier.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            )}
+
             <section>
               <div className="text-center mb-12">
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">Frequently Asked Questions</h2>

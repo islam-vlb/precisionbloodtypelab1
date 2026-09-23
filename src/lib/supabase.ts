@@ -9,6 +9,13 @@ export interface ProductVariant {
   image?: string
 }
 
+export interface CompanionAccessory {
+  name: string
+  description: string
+  features: string[]
+  image: string
+}
+
 export const products = [
   {
     id: 'circulation-support-device',
@@ -42,30 +49,30 @@ export const products = [
       {
         id: 'device-starter-support',
         label: 'Circulation Support Device — Plus',
-        detail: '1 Device',
+        detail: '1 Device + Compression Support Socks (1 Pair)',
         price: 49.76,
         section: 'Single Device Offer',
-        isBundle: false,
+        isBundle: true,
         deviceCount: 1,
         image: '/images/products/device-1x.jpg',
       },
       {
         id: 'device-standard-support',
         label: 'Circulation Support Device — Premium',
-        detail: '1 Device',
+        detail: '1 Device + Compression Support Socks (1 Pair) + Carrying Pouch',
         price: 53.45,
         section: 'Single Device Offer',
-        isBundle: false,
+        isBundle: true,
         deviceCount: 1,
         image: '/images/products/device-1x.jpg',
       },
       {
         id: 'device-extended-support',
         label: 'Circulation Support Device — Complete',
-        detail: '1 Device',
+        detail: '1 Device + Compression Support Socks (2 Pairs) + Carrying Pouch',
         price: 54.95,
         section: 'Single Device Offer',
-        isBundle: false,
+        isBundle: true,
         deviceCount: 1,
         image: '/images/products/device-1x.jpg',
       },
@@ -82,30 +89,30 @@ export const products = [
       {
         id: '2-device-starter-support-bundle',
         label: '2-Device Value Bundle — Plus',
-        detail: '2 Devices',
+        detail: '2 Devices + Compression Support Socks (1 Pair)',
         price: 87.64,
         section: 'Multi-Device Value Offers',
-        isBundle: false,
+        isBundle: true,
         deviceCount: 2,
         image: '/images/products/device-2x.jpg',
       },
       {
         id: '2-device-standard-support-bundle',
         label: '2-Device Value Bundle — Premium',
-        detail: '2 Devices',
+        detail: '2 Devices + Compression Support Socks (1 Pair) + Carrying Pouch',
         price: 87.76,
         section: 'Multi-Device Value Offers',
-        isBundle: false,
+        isBundle: true,
         deviceCount: 2,
         image: '/images/products/device-2x.jpg',
       },
       {
         id: '2-device-extended-support-bundle',
         label: '2-Device Value Bundle — Complete',
-        detail: '2 Devices',
+        detail: '2 Devices + Compression Support Socks (2 Pairs) + Carrying Pouch',
         price: 94.82,
         section: 'Multi-Device Value Offers',
-        isBundle: false,
+        isBundle: true,
         deviceCount: 2,
         image: '/images/products/device-2x.jpg',
       },
@@ -120,6 +127,18 @@ export const products = [
         image: '/images/products/device-3x.jpg',
       },
     ] satisfies ProductVariant[],
+    companionAccessory: {
+      name: 'Compression Support Socks',
+      description:
+        'A pair of general compression-style support socks designed for everyday comfort as part of a daily wellness routine. Intended for general comfort and support use — not a medical or diagnostic product.',
+      features: [
+        'Snug, supportive knit for everyday wear',
+        'Reinforced heel and toe',
+        'One general adult size',
+        'Machine washable',
+      ],
+      image: '/images/products/compression-socks.jpg',
+    } satisfies CompanionAccessory,
   },
 ] as const
 
