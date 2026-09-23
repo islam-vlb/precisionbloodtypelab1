@@ -14,10 +14,13 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-6 text-clinical-muted leading-relaxed">
             <p>
-              TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide wellness devices to customers across the United States.
+              TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide wellness devices and accessories to customers across the United States.
             </p>
             <p>
               Our mission is to make everyday wellness accessible and convenient. The Circulation Support Device is a portable, non-diagnostic device that uses gentle electrical stimulation and mild heat therapy to help support normal circulation in the legs and feet as part of a daily routine, from the privacy of home.
+            </p>
+            <p>
+              We also offer Compression Support Socks, a general comfort accessory designed to pair naturally with a daily circulation-support routine.
             </p>
             <p>
               TrevCore LLC is committed to clear communication, accurate product information, and responsible customer service. All charges appear as {BUSINESS.descriptor} on your statement.

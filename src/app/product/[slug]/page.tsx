@@ -4,11 +4,11 @@ import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { products, getStartingPrice } from '@/lib/supabase'
-import { ChevronRight, Shield, Clock, Users, HelpCircle, Truck, Lock } from 'lucide-react'
+import { Check, ChevronRight, Shield, Clock, Users, HelpCircle, Truck, Lock } from 'lucide-react'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 import { useState } from 'react'
 
-const faqs = [
+const deviceFaqs = [
   {
     q: 'What is the Circulation Support Device?',
     a: 'It is a portable, at-home wellness device that uses gentle electrical stimulation and mild heat therapy to help support normal circulation in the legs and feet as part of a daily wellness routine. It does not test, sample, or analyze blood in any way.',
@@ -39,10 +39,37 @@ const faqs = [
   },
 ]
 
+const accessoryFaqs = [
+  {
+    q: 'What are the Compression Support Socks?',
+    a: 'A pair of general compression-style support socks designed for everyday comfort, intended as a general comfort and support accessory.',
+  },
+  {
+    q: 'What size are they?',
+    a: 'The socks come in one general adult size designed to fit most.',
+  },
+  {
+    q: 'Can I wash them?',
+    a: 'Yes, they are machine washable — follow the included care instructions to keep them in good condition.',
+  },
+  {
+    q: 'How private is my information?',
+    a: 'Your order ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.',
+  },
+  {
+    q: 'What is your return policy?',
+    a: 'We accept returns within 30 days of the date received. Please see our Refund Policy for full details.',
+  },
+]
+
 export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params)
   const product = products.find((p) => p.slug === slug)
   if (!product) return notFound()
+
+  const isDevice = product.category === 'device'
+  const otherProduct = products.find((p) => p.slug !== product.slug)
+  const faqs = isDevice ? deviceFaqs : accessoryFaqs
 
   const defaultVariant = product.variants.find((v) => v.id === product.defaultVariantId) ?? product.variants[0]
   const [selectedVariantId, setSelectedVariantId] = useState(defaultVariant.id)
@@ -71,7 +98,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </div>
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-clinical-crimson/20 bg-clinical-crimson/5 px-3 py-1 mb-4">
-                <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">Wellness Device</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-clinical-crimson">
+                  {isDevice ? 'Wellness Device' : 'Wellness Accessory'}
+                </span>
               </span>
               <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-clinical-charcoal tracking-tight mb-4">
                 {product.name}
@@ -85,66 +114,81 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               <div className="mb-8">
                 <ProductPurchaseBox product={product} selectedVariantId={selectedVariantId} onVariantChange={setSelectedVariantId} />
               </div>
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
-                  <Clock className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
-                  <span className="text-xs font-medium text-clinical-charcoal">Daily Use</span>
+              {isDevice && (
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
+                    <Clock className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
+                    <span className="text-xs font-medium text-clinical-charcoal">Daily Use</span>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
+                    <Shield className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
+                    <span className="text-xs font-medium text-clinical-charcoal">Non-Diagnostic</span>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
+                    <Users className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
+                    <span className="text-xs font-medium text-clinical-charcoal">For Everyday Use</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
-                  <Shield className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
-                  <span className="text-xs font-medium text-clinical-charcoal">Non-Diagnostic</span>
-                </div>
-                <div className="flex items-center gap-2 rounded-xl bg-clinical-gray p-3">
-                  <Users className="h-4 w-4 text-clinical-crimson flex-shrink-0" />
-                  <span className="text-xs font-medium text-clinical-charcoal">For Everyday Use</span>
-                </div>
-              </div>
+              )}
             </div>
         </div>
 
         <div className="mt-20 space-y-20">
-            <section id="how-it-works">
-              <div className="text-center mb-12">
-                <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">How It Works</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[
-                  { num: '01', title: 'Charge & Power On', desc: 'Charge the rechargeable battery, then power on the device using the control panel.' },
-                  { num: '02', title: 'Choose Your Setting', desc: 'Select a comfortable intensity level and add mild heat therapy if you like.' },
-                  { num: '03', title: 'Relax Into Your Routine', desc: 'Use the device for a few minutes as part of your daily circulation-support routine.' },
-                ].map((step) => (
-                  <div key={step.num} className="rounded-2xl bg-clinical-gray p-8 border border-clinical-gray-dark text-center">
-                    <span className="text-4xl font-bold font-heading text-clinical-crimson/20">{step.num}</span>
-                    <h3 className="font-heading text-lg font-bold text-clinical-charcoal mt-3 mb-2">{step.title}</h3>
-                    <p className="text-sm text-clinical-muted leading-relaxed">{step.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            {isDevice && (
+              <section id="how-it-works">
+                <div className="text-center mb-12">
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">How It Works</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {[
+                    { num: '01', title: 'Charge & Power On', desc: 'Charge the rechargeable battery, then power on the device using the control panel.' },
+                    { num: '02', title: 'Choose Your Setting', desc: 'Select a comfortable intensity level and add mild heat therapy if you like.' },
+                    { num: '03', title: 'Relax Into Your Routine', desc: 'Use the device for a few minutes as part of your daily circulation-support routine.' },
+                  ].map((step) => (
+                    <div key={step.num} className="rounded-2xl bg-clinical-gray p-8 border border-clinical-gray-dark text-center">
+                      <span className="text-4xl font-bold font-heading text-clinical-crimson/20">{step.num}</span>
+                      <h3 className="font-heading text-lg font-bold text-clinical-charcoal mt-3 mb-2">{step.title}</h3>
+                      <p className="text-sm text-clinical-muted leading-relaxed">{step.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <section>
               <div className="text-center mb-12">
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">What&apos;s Included</h2>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                {[
-                  { name: 'Support Device', desc: 'Portable circulation-support unit' },
-                  { name: 'Charging Cable', desc: 'For the rechargeable battery' },
-                  { name: 'Intensity Control', desc: 'Adjustable via the +/- buttons on the device' },
-                  { name: 'Heat Function', desc: 'Mild heat therapy mode' },
-                  { name: 'User Guide', desc: 'Step-by-step guidance included' },
-                ].map((item, i) => (
-                  <div key={item.name} className="rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark text-center">
-                    <div className="flex items-center justify-center mb-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-clinical-white text-clinical-crimson font-heading text-sm font-bold border border-clinical-gray-dark">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
+              {isDevice ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: 'Support Device', desc: 'Portable circulation-support unit' },
+                    { name: 'Charging Cable', desc: 'For the rechargeable battery' },
+                    { name: 'Intensity Control', desc: 'Adjustable via the +/- buttons on the device' },
+                    { name: 'Heat Function', desc: 'Mild heat therapy mode' },
+                    { name: 'User Guide', desc: 'Step-by-step guidance included' },
+                  ].map((item, i) => (
+                    <div key={item.name} className="rounded-2xl bg-clinical-gray p-6 border border-clinical-gray-dark text-center">
+                      <div className="flex items-center justify-center mb-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-clinical-white text-clinical-crimson font-heading text-sm font-bold border border-clinical-gray-dark">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                      <h3 className="font-heading text-sm font-bold text-clinical-charcoal mb-1">{item.name}</h3>
+                      <p className="text-xs text-clinical-muted">{item.desc}</p>
                     </div>
-                    <h3 className="font-heading text-sm font-bold text-clinical-charcoal mb-1">{item.name}</h3>
-                    <p className="text-xs text-clinical-muted">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <ul className="max-w-xl mx-auto space-y-3">
+                  {product.features.map((feature) => (
+                    <li key={feature} className="flex gap-3">
+                      <Check className="h-5 w-5 text-clinical-crimson flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-clinical-charcoal leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </section>
 
             <section>
@@ -206,6 +250,28 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 </div>
               </div>
             </section>
+
+            {otherProduct && (
+              <section>
+                <div className="text-center mb-12">
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-clinical-charcoal tracking-tight">You Might Also Like</h2>
+                </div>
+                <div className="max-w-2xl mx-auto">
+                  <div className="rounded-2xl bg-clinical-gray p-8 border border-clinical-gray-dark hover:border-clinical-crimson/30 transition-all duration-300">
+                    <h3 className="font-heading text-xl font-bold text-clinical-charcoal mb-2">{otherProduct.name}</h3>
+                    <p className="text-sm text-clinical-muted leading-relaxed mb-4">{otherProduct.description}</p>
+                    <p className="text-2xl font-bold font-heading text-clinical-charcoal mb-6">Starting at ${getStartingPrice(otherProduct).toFixed(2)}</p>
+                    <Link
+                      href={`/product/${otherProduct.slug}`}
+                      className="inline-flex items-center gap-2 rounded-lg bg-clinical-charcoal px-6 py-3 font-heading font-semibold text-clinical-white hover:bg-clinical-charcoal-light transition-colors"
+                    >
+                      View Product
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </section>
+            )}
           </div>
       </div>
     </div>
